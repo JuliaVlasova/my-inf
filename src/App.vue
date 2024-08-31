@@ -1,6 +1,9 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import ArseneLupinHead from './components/arsene-lupin-image/ArseneLupinHead.vue'
+import ArseneLupinBody from './components/arsene-lupin-image/ArseneLupinBody.vue'
+import ArseneLupinArms from './components/arsene-lupin-image/ArseneLupinArms.vue'
+import ArseneLupinLegs from './components/arsene-lupin-image/ArseneLupinLegs.vue'
 </script>
 
 <template>
@@ -8,7 +11,10 @@ import HelloWorld from './components/HelloWorld.vue'
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <ArseneLupinHead />
+      <ArseneLupinBody />
+      <ArseneLupinArms />
+      <ArseneLupinLegs />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
