@@ -4,6 +4,8 @@ import ArseneLupinHead from './components/arsene-lupin-image/ArseneLupinHead.vue
 import ArseneLupinBody from './components/arsene-lupin-image/ArseneLupinBody.vue'
 import ArseneLupinArms from './components/arsene-lupin-image/ArseneLupinArms.vue'
 import ArseneLupinLegs from './components/arsene-lupin-image/ArseneLupinLegs.vue'
+
+import AnimatedWaves from './components/arsene-lupin-background/AnimatedWaves.vue'
 </script>
 
 <template>
@@ -21,7 +23,9 @@ import ArseneLupinLegs from './components/arsene-lupin-image/ArseneLupinLegs.vue
           <ArseneLupinLegs />
         </div>
 
-        <div class="a-l-background"></div>
+        <div class="a-l-background">
+          <AnimatedWaves />
+        </div>
       </article>
     </div>
   </RouterView>
