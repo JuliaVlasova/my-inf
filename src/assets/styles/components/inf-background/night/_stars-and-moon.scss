@@ -1,1 +1,7 @@
-$background: red;
+@use '../../../variables' as *;
+
+.l-a-wrapper {
+  &_night {
+    background: $background-night;
+  }
+}

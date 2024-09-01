@@ -1,5 +1,18 @@
 @use 'variables' as *;
 
-body {
-  background: $background;
-}
+@use 'base/normalize' as *;
+@use 'base/layout' as *;
+
+@use 'components/inf-background/day/sun' as *;
+@use 'components/inf-background/night/stars-and-moon' as *;
+@use 'components/inf-background/island' as *;
+@use 'components/inf-background/lighthouse' as *;
+@use 'components/inf-background/waves' as *;
+
+@use 'components/inf-dialogs/inf-dialog-window' as *;
+@use 'components/inf-dialogs/inf-phrases' as *;
+
+@use 'components/inf-image/inf-arms' as *;
+@use 'components/inf-image/inf-body' as *;
+@use 'components/inf-image/inf-head' as *;
+@use 'components/inf-image/inf-legs' as *;
