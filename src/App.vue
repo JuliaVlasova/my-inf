@@ -6,6 +6,7 @@ import ArseneLupinArms from './components/arsene-lupin-image/ArseneLupinArms.vue
 import ArseneLupinLegs from './components/arsene-lupin-image/ArseneLupinLegs.vue'
 
 import AnimatedWaves from './components/arsene-lupin-background/AnimatedWaves.vue'
+import AnimatedSun from './components/arsene-lupin-background/day/AnimatedSun.vue'
 </script>
 
 <template>
@@ -25,6 +26,7 @@ import AnimatedWaves from './components/arsene-lupin-background/AnimatedWaves.vu
 
         <div class="a-l-background">
           <AnimatedWaves />
+          <AnimatedSun />
         </div>
       </article>
     </div>
