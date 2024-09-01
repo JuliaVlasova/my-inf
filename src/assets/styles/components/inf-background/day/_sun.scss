@@ -2,6 +2,6 @@
 
 .l-a-wrapper {
   &_day {
-    background: $background-day;
+    background-image: linear-gradient(to top, $background-waves 0%, $background-day 100px);
   }
 }

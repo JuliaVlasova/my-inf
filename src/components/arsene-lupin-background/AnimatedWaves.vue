@@ -10,22 +10,13 @@ defineProps({
 <template>
   <div class="waveWrapper waveAnimation">
     <div class="waveWrapperInner bgTop">
-      <div
-        class="wave waveTop"
-        style="background-image: url('~@/assets/images/waves/wave-top.png')"
-      ></div>
+      <div class="wave waveTop" style=""></div>
     </div>
     <div class="waveWrapperInner bgMiddle">
-      <div
-        class="wave waveMiddle"
-        style="background-image: url('~@/assets/images/waves/wave-mid.png')"
-      ></div>
+      <div class="wave waveMiddle"></div>
     </div>
     <div class="waveWrapperInner bgBottom">
-      <div
-        class="wave waveBottom"
-        style="background-image: url('~@/assets/images/waves/wave-bot.png')"
-      ></div>
+      <div class="wave waveBottom"></div>
     </div>
   </div>
 </template>
@@ -59,7 +50,6 @@ defineProps({
   overflow: hidden;
   height: 100%;
   bottom: -1px;
-  background-image: linear-gradient(to top, #86377b 20%, #27273c 80%);
 }
 
 .bgTop {
@@ -79,6 +69,7 @@ defineProps({
 .wave {
   position: absolute;
   left: 0;
+  opacity: 0.4;
   width: 200%;
   height: 100%;
   background-repeat: repeat no-repeat;
@@ -88,6 +79,7 @@ defineProps({
 
 .waveTop {
   background-size: 50% 100px;
+  background-image: url('@/assets/images/waves/wave-top.png');
 }
 
 .waveAnimation .waveTop {
@@ -99,6 +91,7 @@ defineProps({
 
 .waveMiddle {
   background-size: 50% 120px;
+  background-image: url('@/assets/images/waves/wave-mid.png');
 }
 
 .waveAnimation .waveMiddle {
@@ -107,6 +100,7 @@ defineProps({
 
 .waveBottom {
   background-size: 50% 100px;
+  background-image: url('@/assets/images/waves/wave-bot.png');
 }
 
 .waveAnimation .waveBottom {
