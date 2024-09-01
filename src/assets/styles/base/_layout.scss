@@ -26,3 +26,18 @@ body {
 #app {
   height: 100%;
 }
+
+nav {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  z-index: 100;
+  position: relative;
+}
+
+.a-l-inf {
+  z-index: 100;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+}

@@ -1,4 +1,7 @@
 <script setup>
+import { ref } from 'vue'
+const day = ref(true)
+
 import { RouterLink, RouterView } from 'vue-router'
 import ArseneLupinHead from './components/arsene-lupin-image/ArseneLupinHead.vue'
 import ArseneLupinBody from './components/arsene-lupin-image/ArseneLupinBody.vue'
@@ -11,10 +14,11 @@ import AnimatedSun from './components/arsene-lupin-background/day/AnimatedSun.vu
 
 <template>
   <RouterView>
-    <div class="l-a-wrapper l-a-wrapper_day">
+    <div class="l-a-wrapper" :class="day ? 'l-a-wrapper_day' : 'l-a-wrapper_night'">
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/about">Об авторе</RouterLink>
+        <button @click="day = !day">Включить ночь</button>
       </nav>
       <article>
         <div class="a-l-inf">

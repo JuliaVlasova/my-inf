@@ -2,6 +2,12 @@
 
 .l-a-wrapper {
   &_day {
-    background-image: linear-gradient(to top, $background-waves 0%, $background-day 100px);
+    background-image: map-get($colors, 'day-gradient');
+
+    nav {
+      a {
+        color: map-get($colors, 'color-main');
+      }
+    }
   }
 }

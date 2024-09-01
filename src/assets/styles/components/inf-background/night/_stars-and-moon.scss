@@ -2,6 +2,12 @@
 
 .l-a-wrapper {
   &_night {
-    background: $background-night;
+    background: map-get($colors, 'background-night');
+
+    nav {
+      a {
+        color: map-get($colors, 'color-white');
+      }
+    }
   }
 }

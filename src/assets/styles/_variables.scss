@@ -1,3 +1,9 @@
-$background-day: #ccffff;
-$background-night: #003366;
-$background-waves: #008080;
+$colors: (
+  'color-white': #ffffff,
+  'color-main': #000000,
+  'background-day': #ccffff,
+  'background-night': #003366,
+  'background-waves': #008080,
+
+  'day-gradient': linear-gradient(to top, #008080 0%, #ccffff 100px)
+);
