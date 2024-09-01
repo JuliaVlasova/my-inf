@@ -1,11 +1,4 @@
-<script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true
-  }
-})
-</script>
+<script setup></script>
 
 <template>
   <div class="waveWrapper waveAnimation">

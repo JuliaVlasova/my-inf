@@ -1,11 +1,4 @@
-<script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true
-  }
-})
-</script>
+<script setup></script>
 
 <template>
   <div class="greetings">
@@ -18,6 +11,4 @@ defineProps({
   </div>
 </template>
 
-<style lang="scss" scoped>
- 
-</style>
+<style lang="scss" scoped></style>

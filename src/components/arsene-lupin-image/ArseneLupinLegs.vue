@@ -1,20 +1,7 @@
-<script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true
-  }
-})
-</script>
+<script setup></script>
 
 <template>
-  <div class="a-l-legs">
-    <h3>
-      Тут у нас ноги
-    </h3>
-  </div>
+  <div class="a-l-legs"></div>
 </template>
 
-<style lang="scss" scoped>
- 
-</style>
+<style lang="scss" scoped></style>
