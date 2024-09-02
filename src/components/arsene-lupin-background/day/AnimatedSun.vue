@@ -35,6 +35,10 @@
   animation-iteration-count: infinite;
   animation-direction: alternate;
   border-radius: 100%;
+
+  .l-a-wrapper_night & {
+    animation: moon 2s linear infinite;
+  }
 }
 #two {
   background-color: rgba(255, 184, 77, 0.7);
@@ -47,6 +51,10 @@
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+
+  .l-a-wrapper_night & {
+    display: none;
+  }
 }
 #three {
   background-color: rgba(255, 255, 0, 7);
@@ -59,6 +67,10 @@
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+
+  .l-a-wrapper_night & {
+    display: none;
+  }
 }
 #four {
   box-shadow: 0px 0px 1000px 1px rgba(255, 194, 102, 0.75);
@@ -71,6 +83,10 @@
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+
+  .l-a-wrapper_night & {
+    display: none;
+  }
 }
 #five {
   background-color: rgba(255, 255, 26, 0.7);
@@ -83,6 +99,10 @@
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+
+  .l-a-wrapper_night & {
+    display: none;
+  }
 }
 #bottom {
   width: 400px;
@@ -166,6 +186,23 @@
   }
   to {
     transform: rotate(72deg);
+  }
+}
+@keyframes moon {
+  0% {
+    box-shadow: 0px 0px 20px 3px rgba(255, 255, 26, 0.9);
+  }
+  25% {
+    box-shadow: 0px 0px 40px 10px rgba(255, 255, 26, 0.9);
+  }
+  50% {
+    box-shadow: 0px 0px 40px 20px rgba(255, 255, 26, 0.9);
+  }
+  75% {
+    box-shadow: 0px 0px 40px 10px rgba(255, 255, 26, 0.9);
+  }
+  100% {
+    box-shadow: 0px 0px 20px 3px rgba(255, 255, 26, 0.9);
   }
 }
 @keyframes top {
