@@ -19,25 +19,27 @@ function changeDay(event) {
 </script>
 
 <template>
-  <RouterView>
-    <div class="l-a-wrapper" :class="day ? 'l-a-wrapper_day' : 'l-a-wrapper_night'">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">Об авторе</RouterLink>
-        <DayNightButton @click="changeDay" />
-      </nav>
-      <article>
-        <ArseneLupinBody />
+  <div class="l-a-wrapper" :class="day ? 'l-a-wrapper_day' : 'l-a-wrapper_night'">
+    <nav>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/about">Об авторе</RouterLink>
+      <DayNightButton @click="changeDay" />
+    </nav>
+    <article>
+      <ArseneLupinBody />
 
-        <div class="a-l-background">
-          <AnimatedWaves />
-          <AnimatedSun />
-          <AnimatedLighthouse />
-          <AnimatedStars />
-        </div>
-      </article>
-    </div>
-  </RouterView>
+      <div class="a-l-background">
+        <AnimatedWaves />
+        <AnimatedSun />
+        <AnimatedLighthouse />
+        <AnimatedStars />
+      </div>
+    </article>
+
+    <main>
+      <RouterView />
+    </main>
+  </div>
 </template>
 
 <style lang="scss" scoped></style>
