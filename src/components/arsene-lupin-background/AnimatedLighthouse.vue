@@ -241,7 +241,7 @@
         background: #fd8682;
         width: 30px;
         height: 30px;
-        top: -30px;
+        top: -26px;
         border-radius: 50%;
         left: 50%;
         transform: translate(-50%);
