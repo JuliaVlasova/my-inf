@@ -84,7 +84,7 @@
     transform: scale(0.5);
   }
   50% {
-    transform: scale(0);
+    transform: scale(0.2);
   }
   75% {
     transform: scale(0.5);
