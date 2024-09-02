@@ -1,13 +1,21 @@
 <script setup>
-import { ref } from 'vue'
-const day = ref(true)
-
 import { RouterLink, RouterView } from 'vue-router'
+import { ref } from 'vue'
 
 import ArseneLupinBody from './components/arsene-lupin-image/ArseneLupinBody.vue'
 import AnimatedWaves from './components/arsene-lupin-background/AnimatedWaves.vue'
 import AnimatedSun from './components/arsene-lupin-background/day/AnimatedSun.vue'
 import AnimatedLighthouse from './components/arsene-lupin-background/AnimatedLighthouse.vue'
+import DayNightButton from './components/arsene-lupin-background/DayNightButton.vue'
+import AnimatedStars from './components/arsene-lupin-background/night/AnimatedStars.vue'
+
+const day = ref(true)
+
+function changeDay(event) {
+  if (event) {
+    day.value = !day.value
+  }
+}
 </script>
 
 <template>
@@ -16,7 +24,7 @@ import AnimatedLighthouse from './components/arsene-lupin-background/AnimatedLig
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">Об авторе</RouterLink>
-        <button @click="day = !day">Включить ночь</button>
+        <DayNightButton @click="changeDay" />
       </nav>
       <article>
         <ArseneLupinBody />
@@ -25,6 +33,7 @@ import AnimatedLighthouse from './components/arsene-lupin-background/AnimatedLig
           <AnimatedWaves />
           <AnimatedSun />
           <AnimatedLighthouse />
+          <AnimatedStars />
         </div>
       </article>
     </div>
