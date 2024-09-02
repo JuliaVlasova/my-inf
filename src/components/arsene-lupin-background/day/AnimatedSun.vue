@@ -203,7 +203,7 @@
     box-shadow: 0px 0px 40px 10px rgba(244, 244, 143, 0.9);
   }
   100% {
-    box-shadow: 0px 0px 20px 3px rgba(255, 255, 26, 0.9);
+    box-shadow: 0px 0px 20px 3px rgba(244, 244, 143, 0.9);
   }
 }
 @keyframes top {
