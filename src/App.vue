@@ -3,13 +3,11 @@ import { ref } from 'vue'
 const day = ref(true)
 
 import { RouterLink, RouterView } from 'vue-router'
-import ArseneLupinHead from './components/arsene-lupin-image/ArseneLupinHead.vue'
-import ArseneLupinBody from './components/arsene-lupin-image/ArseneLupinBody.vue'
-import ArseneLupinArms from './components/arsene-lupin-image/ArseneLupinArms.vue'
-import ArseneLupinLegs from './components/arsene-lupin-image/ArseneLupinLegs.vue'
 
+import ArseneLupinBody from './components/arsene-lupin-image/ArseneLupinBody.vue'
 import AnimatedWaves from './components/arsene-lupin-background/AnimatedWaves.vue'
 import AnimatedSun from './components/arsene-lupin-background/day/AnimatedSun.vue'
+import AnimatedLighthouse from './components/arsene-lupin-background/AnimatedLighthouse.vue'
 </script>
 
 <template>
@@ -21,16 +19,12 @@ import AnimatedSun from './components/arsene-lupin-background/day/AnimatedSun.vu
         <button @click="day = !day">Включить ночь</button>
       </nav>
       <article>
-        <div class="a-l-inf">
-          <ArseneLupinHead />
-          <ArseneLupinBody />
-          <ArseneLupinArms />
-          <ArseneLupinLegs />
-        </div>
+        <ArseneLupinBody />
 
         <div class="a-l-background">
           <AnimatedWaves />
           <AnimatedSun />
+          <AnimatedLighthouse />
         </div>
       </article>
     </div>

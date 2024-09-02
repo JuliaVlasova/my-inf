@@ -21,6 +21,8 @@ body {
 
 .l-a-wrapper {
   height: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 #app {

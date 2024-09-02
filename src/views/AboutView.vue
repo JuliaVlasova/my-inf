@@ -1,7 +1,5 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <div class="about">Этот автор хочет освоить Vue.js, поэтому что-то тут ковыряет =)</div>
 </template>
 
 <style lang="scss" scoped></style>
