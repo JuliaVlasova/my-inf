@@ -38,7 +38,7 @@
     width: 40px;
     height: 40px;
     background: #fdc856;
-    border: 6px solid darken(#f8f0d2, 80%);
+    border: 6px solid #c02121;
     left: 50%;
     position: relative;
     transform: translateX(-50%);
@@ -47,23 +47,23 @@
       display: block;
       content: '';
       position: absolute;
-      width: 6px;
-      height: 28px;
+      width: 4px;
+      height: 30px;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background: #fbad28;
+      background: #c02121;
     }
     &::after {
       display: block;
       content: '';
       position: absolute;
-      width: 28px;
-      height: 6px;
+      width: 30px;
+      height: 4px;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background: #fbad28;
+      background: #c02121;
     }
   }
   .balcony {
