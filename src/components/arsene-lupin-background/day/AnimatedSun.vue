@@ -37,6 +37,7 @@
   border-radius: 100%;
 
   .l-a-wrapper_night & {
+    background-color: rgb(244 244 143);
     animation: moon 2s linear infinite;
   }
 }
@@ -190,16 +191,16 @@
 }
 @keyframes moon {
   0% {
-    box-shadow: 0px 0px 20px 3px rgba(255, 255, 26, 0.9);
+    box-shadow: 0px 0px 20px 3px rgba(244, 244, 143, 0.9);
   }
   25% {
-    box-shadow: 0px 0px 40px 10px rgba(255, 255, 26, 0.9);
+    box-shadow: 0px 0px 40px 10px rgba(244, 244, 143, 0.9);
   }
   50% {
-    box-shadow: 0px 0px 40px 20px rgba(255, 255, 26, 0.9);
+    box-shadow: 0px 0px 40px 20px rgba(244, 244, 143, 0.9);
   }
   75% {
-    box-shadow: 0px 0px 40px 10px rgba(255, 255, 26, 0.9);
+    box-shadow: 0px 0px 40px 10px rgba(244, 244, 143, 0.9);
   }
   100% {
     box-shadow: 0px 0px 20px 3px rgba(255, 255, 26, 0.9);

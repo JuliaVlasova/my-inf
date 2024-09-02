@@ -32,7 +32,7 @@ function changeDay(event) {
         <AnimatedWaves />
         <AnimatedSun />
         <AnimatedLighthouse />
-        <AnimatedStars />
+        <AnimatedStars v-show="!day" />
       </div>
     </article>
 
