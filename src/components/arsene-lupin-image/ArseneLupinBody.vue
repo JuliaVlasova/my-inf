@@ -371,6 +371,8 @@
     z-index: 2;
     overflow: hidden;
     border-radius: 100%;
+    border-right: none;
+    border-left: none;
 
     .a-l-inf__eyeball {
       width: 8px;
@@ -441,6 +443,8 @@
     z-index: 2;
     overflow: hidden;
     border-radius: 100%;
+    border-right: none;
+    border-left: none;
 
     .a-l-inf__eyeball {
       width: 8px;
@@ -577,16 +581,6 @@
     transition: all 200ms ease;
   }
   &__lower-lip {
-    width: 6px;
-    height: 17px;
-    border-top: 1px solid #000;
-    border-top-left-radius: 7px;
-    position: absolute;
-    top: 84px;
-    left: 35px;
-    transform: rotate(20deg);
-
-    //new
     width: 14px;
     height: 1px;
     border-top: 2px solid #7c0909;
