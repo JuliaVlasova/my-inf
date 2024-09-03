@@ -43,6 +43,10 @@
   overflow: hidden;
   height: 100%;
   bottom: -1px;
+
+  .l-a-wrapper_night & {
+    mix-blend-mode: soft-light;
+  }
 }
 
 .bgTop {
