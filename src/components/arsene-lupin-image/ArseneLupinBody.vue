@@ -373,10 +373,10 @@
     border-radius: 100%;
 
     .a-l-inf__eyeball {
-      width: 6px;
-      height: 6px;
+      width: 8px;
+      height: 8px;
       background-color: black;
-      border-radius: 3px;
+      border-radius: 100px;
       position: absolute;
       left: 2px;
       top: 1px;
@@ -443,10 +443,10 @@
     border-radius: 100%;
 
     .a-l-inf__eyeball {
-      width: 6px;
-      height: 6px;
+      width: 8px;
+      height: 8px;
       background-color: black;
-      border-radius: 3px;
+      border-radius: 100px;
       position: absolute;
       left: 2px;
       top: 1px;
@@ -551,6 +551,8 @@
     top: 80px;
     left: 49px;
     transform: rotate(-60deg);
+
+    display: none;
   }
   &__mouth-line {
     width: 21px;
@@ -560,6 +562,17 @@
     position: absolute;
     top: 79px;
     left: 23px;
+    transform: rotate(44deg);
+    transition: all 200ms ease;
+
+    //new
+    width: 26px;
+    height: 19px;
+    border-top: 2px solid #7c0909;
+    border-top-left-radius: 20px 4px;
+    position: absolute;
+    top: 77px;
+    left: 18px;
     transform: rotate(44deg);
     transition: all 200ms ease;
   }
@@ -572,6 +585,16 @@
     top: 84px;
     left: 35px;
     transform: rotate(20deg);
+
+    //new
+    width: 14px;
+    height: 1px;
+    border-top: 2px solid #7c0909;
+    border-radius: 100%;
+    position: absolute;
+    top: 83px;
+    left: 29px;
+    transform: rotate(41deg);
   }
   &__shirt#shirt-left {
     position: absolute;

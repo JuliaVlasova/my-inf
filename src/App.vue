@@ -8,6 +8,7 @@ import AnimatedSun from './components/arsene-lupin-background/day/AnimatedSun.vu
 import AnimatedLighthouse from './components/arsene-lupin-background/AnimatedLighthouse.vue'
 import DayNightButton from './components/arsene-lupin-background/DayNightButton.vue'
 import AnimatedStars from './components/arsene-lupin-background/night/AnimatedStars.vue'
+import AnimatedIsland from './components/arsene-lupin-background/AnimatedIsland.vue'
 
 const day = ref(true)
 
@@ -33,6 +34,7 @@ function changeDay(event) {
         <AnimatedSun />
         <AnimatedLighthouse />
         <AnimatedStars v-show="!day" />
+        <AnimatedIsland />
       </div>
     </article>
 
