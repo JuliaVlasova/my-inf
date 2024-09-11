@@ -34,6 +34,11 @@
   background: repeating-linear-gradient(30deg, #f08c85, #f08c85 40px, #fff 40px, #fff 80px);
   animation: sway 4s linear infinite alternate;
 
+  @media screen and (max-width: 940px) {
+    animation: sway-mobile 3s linear infinite alternate;
+    left: -60px;
+  }
+
   .window {
     width: 40px;
     height: 40px;
@@ -43,6 +48,7 @@
     position: relative;
     transform: translateX(-50%);
     border-radius: 50%;
+
     &::before {
       display: block;
       content: '';
@@ -54,6 +60,7 @@
       transform: translate(-50%, -50%);
       background: #c02121;
     }
+
     &::after {
       display: block;
       content: '';
@@ -66,6 +73,7 @@
       background: #c02121;
     }
   }
+
   .balcony {
     position: absolute;
     height: 40px;
@@ -75,6 +83,7 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
+
     &::before {
       content: '';
       display: block;
@@ -85,6 +94,7 @@
       bottom: 0;
     }
   }
+
   .balcony-2 {
     position: absolute;
     bottom: 20px;
@@ -95,6 +105,7 @@
     border-right: 5px solid #93b4dc;
     z-index: 5;
   }
+
   .balcony-3 {
     position: absolute;
     bottom: 30px;
@@ -105,6 +116,7 @@
     border-top: 5px solid #93b4dc;
     border-left: 5px solid #93b4dc;
     border-right: 5px solid #93b4dc;
+
     &::before {
       content: '';
       display: block;
@@ -117,6 +129,7 @@
       width: 5px;
     }
   }
+
   .house {
     position: absolute;
     width: 130px;
@@ -126,6 +139,7 @@
     border-left: 5px solid #93b4dc;
     border-right: 5px solid #93b4dc;
     background: #fdc856;
+
     &::before {
       content: '';
       display: block;
@@ -136,6 +150,7 @@
       height: 10px;
       background: #93b4dc;
     }
+
     &::after {
       content: '';
       display: block;
@@ -147,6 +162,7 @@
       background: #c4d9fb;
       transform: translateX(-50%);
     }
+
     .light {
       position: absolute;
       width: 35px;
@@ -158,6 +174,7 @@
       transform: translate(-50%);
       border: 4px solid #fba31d;
       animation: light 5s linear infinite;
+
       &::before {
         content: '';
         display: block;
@@ -170,6 +187,7 @@
         background: #fba31d;
       }
     }
+
     .roof {
       position: absolute;
       height: 20px;
@@ -178,6 +196,7 @@
       z-index: 5;
       top: -20px;
       background: #93b4dc;
+
       &::before {
         content: '';
         display: block;
@@ -191,6 +210,7 @@
         left: -10px;
         top: 0;
       }
+
       &::after {
         content: '';
         display: block;
@@ -205,6 +225,7 @@
         top: 0;
       }
     }
+
     .roof-2 {
       position: absolute;
       height: 20px;
@@ -213,6 +234,7 @@
       right: -15px;
       z-index: 5;
       background: #c4d9fb;
+
       &::before {
         content: '';
         display: block;
@@ -224,6 +246,7 @@
         background: #93b4dc;
       }
     }
+
     .roof-3 {
       position: absolute;
       width: 130px;
@@ -234,6 +257,7 @@
       top: -82.5px;
       transform: translate(-50%);
       z-index: 0;
+
       &::before {
         content: '';
         display: block;
@@ -265,6 +289,24 @@
   }
   100% {
     transform: rotate(15deg);
+  }
+}
+
+@keyframes sway-mobile {
+  0% {
+    transform: rotate(-8deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(8deg);
   }
 }
 

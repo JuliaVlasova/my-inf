@@ -7,7 +7,14 @@
   padding: 10px 20px;
   line-height: 1;
   font-size: 16px;
-  background: map-get($colors, 'background-night');
-  color: map-get($colors, 'background-day');
   border-radius: 8px;
+  color: map-get($colors, 'background-day');
+
+  .l-a-wrapper_day & {
+    background: map-get($colors, 'background-night');
+  }
+
+  .l-a-wrapper_night & {
+    background: darken(map-get($colors, 'background-night'), 5%);
+  }
 }

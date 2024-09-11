@@ -5,7 +5,6 @@
       Мориса Леблана, ворующий направо и налево без особого труда. У меня он будет сыпать книжными
       остротами, отвечать вам чётко и без запинки на любые вопросы и замечания.
     </p>
-    <p>P.S. Запилить мобильную версию</p>
   </div>
 </template>
 
@@ -21,6 +20,27 @@
 
   .l-a-wrapper_night & {
     color: #fff;
+
+    @media screen and (max-width: 940px) {
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .l-a-wrapper_day & {
+    @media screen and (max-width: 940px) {
+      background: rgba(225, 225, 225, 0.8);
+    }
+  }
+
+  @media screen and (max-width: 940px) {
+    position: relative;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 20px;
+    font-size: 22px;
   }
 }
 </style>
