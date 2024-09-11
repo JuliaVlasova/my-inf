@@ -173,7 +173,10 @@
       left: 50%;
       transform: translate(-50%);
       border: 4px solid #fba31d;
-      animation: light 5s linear infinite;
+
+      .l-a-wrapper_night & {
+        animation: light 5s linear infinite;
+      }
 
       &::before {
         content: '';
