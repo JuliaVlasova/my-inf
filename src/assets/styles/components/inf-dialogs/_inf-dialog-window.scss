@@ -1,1 +1,115 @@
-$background: red;
+@use '../../variables' as *;
+
+.dialog {
+  position: absolute;
+  right: 195px;
+  bottom: 300px;
+  z-index: 200;
+  width: 300px;
+  min-height: 150px;
+  border-radius: 20px;
+  padding: 20px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    border-left: 40px solid transparent;
+    border-right: 52px solid transparent;
+    bottom: -18px;
+    right: -24px;
+    transform: rotate(72deg);
+
+    .l-a-wrapper_night & {
+      border-top: 50px solid map-get($colors, 'background-day');
+    }
+
+    .l-a-wrapper_day & {
+      border-top: 50px solid map-get($colors, 'background-night');
+    }
+  }
+
+  .l-a-wrapper_night & {
+    background: map-get($colors, 'background-day');
+    border: 1px solid map-get($colors, 'background-day');
+  }
+
+  .l-a-wrapper_day & {
+    background: map-get($colors, 'background-night');
+    border: 1px solid map-get($colors, 'background-night');
+  }
+
+  &__question {
+    outline: none;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+    z-index: 2;
+    position: relative;
+    border-radius: 10px;
+    max-height: 80px;
+    resize: none;
+    margin-bottom: 10px;
+
+    .l-a-wrapper_night & {
+      border: 1px solid map-get($colors, 'background-night');
+    }
+
+    .l-a-wrapper_day & {
+      border: 1px solid map-get($colors, 'background-day');
+    }
+  }
+
+  &__answer {
+    font-size: 16px;
+    margin-bottom: 20px;
+    max-height: 115px;
+    overflow: hidden;
+    overflow-y: auto;
+
+    .l-a-wrapper_night & {
+      color: map-get($colors, 'background-night');
+    }
+
+    .l-a-wrapper_day & {
+      color: map-get($colors, 'background-day');
+    }
+  }
+
+  &__button {
+    margin-left: auto;
+    display: table;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    z-index: 2;
+    position: relative;
+    user-select: none;
+
+    .l-a-wrapper_night & {
+      color: map-get($colors, 'background-day');
+      background: map-get($colors, 'background-night');
+
+      &:hover {
+        background: lighten(map-get($colors, 'background-night'), 3%);
+      }
+
+      &:active {
+        background: darken(map-get($colors, 'background-night'), 5%);
+      }
+    }
+
+    .l-a-wrapper_day & {
+      color: map-get($colors, 'background-night');
+      background: map-get($colors, 'background-day');
+
+      &:hover {
+        background: lighten(map-get($colors, 'background-day'), 3%);
+      }
+
+      &:active {
+        background: darken(map-get($colors, 'background-day'), 5%);
+      }
+    }
+  }
+}

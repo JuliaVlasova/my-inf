@@ -9,6 +9,7 @@ import AnimatedLighthouse from './components/arsene-lupin-background/AnimatedLig
 import DayNightButton from './components/arsene-lupin-background/DayNightButton.vue'
 import AnimatedStars from './components/arsene-lupin-background/night/AnimatedStars.vue'
 import AnimatedIsland from './components/arsene-lupin-background/AnimatedIsland.vue'
+import ArseneLupinDialogWindow from './components/arsene-lupin-dialogs/ArseneLupinDialogWidow.vue'
 
 const day = ref(true)
 
@@ -27,6 +28,7 @@ function changeDay(event) {
       <DayNightButton @click="changeDay" />
     </nav>
     <article>
+      <ArseneLupinDialogWindow />
       <ArseneLupinBody />
 
       <div class="a-l-background">
