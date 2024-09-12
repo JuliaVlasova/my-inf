@@ -10,6 +10,11 @@
   border-radius: 20px;
   padding: 20px;
 
+  @media screen and (max-width: 500px) {
+    right: 5%;
+    width: 90%;
+  }
+
   &::after {
     content: '';
     position: absolute;
@@ -18,6 +23,13 @@
     bottom: -18px;
     right: -24px;
     transform: rotate(72deg);
+
+    @media screen and (max-width: 500px) {
+      border-right: 20px solid transparent;
+      bottom: -18px;
+      right: 154px;
+      transform: rotate(218deg);
+    }
 
     .l-a-wrapper_night & {
       border-top: 50px solid map-get($colors, 'background-day');
