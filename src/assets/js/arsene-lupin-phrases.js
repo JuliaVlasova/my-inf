@@ -33,12 +33,17 @@ export function ArseneLupinPhrases() {
       'Здравствуй, пришелец!',
       'Кукусики!',
       'Здравия желаю товарищ... как вас там?'
+    ],
+    aboutMe: [
+      'Я-то? Великий и ужасный инф Арсен Люпен! Мой прародитель был чудеснейшим вором, который не грабил бедняков и вел честный образ жизни. Ну почти.',
+      'Меня зовут Арсен Люпен. А ты кто таков будешь?'
     ]
   }
 
   // Библиотека вопросов
   const questions = {
-    hello: ['привет', 'здравствуй', 'куку', 'ку-ку']
+    hello: ['привет', 'здравствуй', 'куку', 'ку-ку'],
+    aboutMe: ['кто ты', 'ты кто']
   }
 
   function answersRandom(array) {
@@ -61,27 +66,31 @@ export function ArseneLupinPhrases() {
   }
 
   // Главная проверка
-  if (questionVal.includes('?')) {
-    answer = answersRandom(answers.question)
-  } else if (questionVal.includes('!')) {
-    answer = answersRandom(answers.exclamation)
-  } else if (questionVal == '' || questionVal == ' ') {
-    answer = answersRandom(answers.null)
-  } else if (anyQuestion(questions.hello)) {
+  if (anyQuestion(questions.hello)) {
     answer = answersRandom(answers.hello)
+  } else if (anyQuestion(questions.aboutMe)) {
+    answer = answersRandom(answers.aboutMe) // а тут хочется функцию
   } else {
-    answer = answersRandom(answers.default)
+    // Неопределенный вопрос и ответы на него
+    if (questionVal.includes('?')) {
+      answer = answersRandom(answers.question)
+    } else if (questionVal.includes('!')) {
+      answer = answersRandom(answers.exclamation)
+    } else if (questionVal == '' || questionVal == ' ') {
+      answer = answersRandom(answers.null)
+    } else {
+      answer = answersRandom(answers.default)
+    }
   }
 
   return answer
 }
 
-// Добавить инфу вредности (режим обиды, долгое ожидание ответа)
-// Пусть записывает твое имя и другие данные
-//Адаптивность окна диалога
+//Добавить инфу вредности (режим обиды, долгое ожидание ответа)
+//Пусть записывает твое имя и другие данные
 //Дорисовать чувака
 //Анимировать море через canvas
 //Облако, которое проплывает с интервалом, становится темной тучей и проливается дождем, а потом тает
-//Допилить мобильную версию
-
+//Допилить мобильную версию звезд
 // Ответы разбить на темы, и пусть его иногда заносит, а если в вопросе будет "стоп", "хватит", "эй", "сколько можно", выносить его из темы в общие фразы
+//Скроллбар в диалоге
