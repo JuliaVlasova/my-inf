@@ -30,7 +30,7 @@ onMounted(() => {
       name="dialog-question"
       rows="3"
       cols="15"
-      placeholder="Поговори со мной, пока не кончилась ночь"
+      placeholder="Поговори со мной"
       v-on:keyup.enter="updateQuestion"
     >
     </textarea>

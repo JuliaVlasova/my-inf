@@ -23,7 +23,6 @@ function changeDay(event) {
 <template>
   <div class="l-a-wrapper" :class="day ? 'l-a-wrapper_day' : 'l-a-wrapper_night'">
     <nav>
-      <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">Об авторе</RouterLink>
       <DayNightButton @click="changeDay" />
     </nav>
@@ -40,9 +39,7 @@ function changeDay(event) {
       </div>
     </article>
 
-    <main>
-      <RouterView />
-    </main>
+    <RouterView />
   </div>
 </template>
 

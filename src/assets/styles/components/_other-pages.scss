@@ -1,0 +1,117 @@
+@use '../variables' as *;
+
+.page-layout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 300;
+  font-size: 26px;
+  line-height: 1.4;
+  padding: 80px 20px;
+  animation: fall-from-top 0.3s ease-in-out;
+  transition: all 0.8s ease-in-out;
+
+  &__inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  &__close {
+    --size: 40px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: var(--size);
+    height: var(--size);
+    cursor: pointer;
+
+    &:hover {
+      animation: rotate-close 1s linear infinite;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 30px;
+      height: 3px;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      background: map-get($colors, 'background-night');
+
+      .l-a-wrapper_night & {
+        background: map-get($colors, 'background-day');
+      }
+
+      .l-a-wrapper_day & {
+        background: map-get($colors, 'background-night');
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 30px;
+      height: 3px;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+
+      .l-a-wrapper_night & {
+        background: map-get($colors, 'background-day');
+      }
+
+      .l-a-wrapper_day & {
+        background: map-get($colors, 'background-night');
+      }
+    }
+  }
+
+  .l-a-wrapper_night & {
+    color: map-get($colors, 'background-day');
+    background: map-get($colors, 'background-night');
+  }
+
+  .l-a-wrapper_day & {
+    color: map-get($colors, 'background-night');
+    background: map-get($colors, 'background-day');
+  }
+
+  @media screen and (max-width: 940px) {
+    font-size: 22px;
+  }
+
+  @keyframes rotate-close {
+    0% {
+      transform: rotate(0deg);
+      transform-origin: 50% 50%;
+    }
+
+    100% {
+      transform: rotate(360deg);
+      transform-origin: 50% 50%;
+    }
+  }
+}
+
+@keyframes fall-from-top {
+  0% {
+    transform: translate(0, -100%);
+  }
+
+  80% {
+    transform: none;
+  }
+
+  90% {
+    transform: translate(0, -100px);
+  }
+
+  100% {
+    transform: none;
+  }
+}
