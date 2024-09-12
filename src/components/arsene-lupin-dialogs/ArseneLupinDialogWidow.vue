@@ -8,6 +8,7 @@ const dialogButton = document.getElementById('dialog-button')
 
 function updateQuestion() {
   answer.value = ArseneLupinPhrases() // Логика ответов на вопросы
+  question.value = ''
 }
 
 onMounted(() => {
@@ -30,6 +31,7 @@ onMounted(() => {
       rows="3"
       cols="15"
       placeholder="Поговори со мной, пока не кончилась ночь"
+      v-on:keyup.enter="updateQuestion"
     >
     </textarea>
     <div class="dialog__button" id="dialog-button" @click="updateQuestion">Отправить</div>
