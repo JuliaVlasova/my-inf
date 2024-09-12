@@ -11,9 +11,11 @@
   z-index: 300;
   font-size: 26px;
   line-height: 1.4;
-  padding: 80px 20px;
+  padding: 80px 80px 80px 20px;
   animation: fall-from-top 0.3s ease-in-out;
   transition: all 0.8s ease-in-out;
+  overflow: hidden;
+  overflow-y: auto;
 
   &__inner {
     max-width: 600px;
@@ -85,16 +87,35 @@
     font-size: 22px;
   }
 
-  @keyframes rotate-close {
-    0% {
-      transform: rotate(0deg);
-      transform-origin: 50% 50%;
+  ul {
+    li {
+    }
+  }
+
+  a {
+    .l-a-wrapper_night & {
+      color: map-get($colors, 'background-day');
     }
 
-    100% {
-      transform: rotate(360deg);
-      transform-origin: 50% 50%;
+    .l-a-wrapper_day & {
+      color: map-get($colors, 'background-night');
     }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@keyframes rotate-close {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform-origin: 50% 50%;
   }
 }
 
