@@ -76,13 +76,16 @@
       <div class="a-l-inf__hand-right">
         <div class="a-l-inf__finger1"></div>
         <div class="a-l-inf__finger2"></div>
+        <div class="a-l-inf__finger3"></div>
+        <div class="a-l-inf__finger4"></div>
       </div>
       <div class="a-l-inf__hand-left">
         <div class="a-l-inf__finger1"></div>
         <div class="a-l-inf__finger2"></div>
         <div class="a-l-inf__finger3"></div>
-        <div class="a-l-inf__palm"></div>
         <div class="a-l-inf__finger4"></div>
+        <div class="a-l-inf__palm"></div>
+        <div class="a-l-inf__finger5"></div>
       </div>
     </div>
   </div>
@@ -608,7 +611,7 @@
     height: 74px;
     background-color: #8c8b82;
     border: 2px solid #000;
-    top: 74px;
+    top: 71px;
     left: 103px;
     transform: rotate(-10deg);
     border-top-right-radius: 137px 90px;
@@ -652,12 +655,12 @@
   }
   &__overalls-strap-left {
     position: absolute;
-    width: 12px;
-    height: 41px;
+    width: 13px;
+    height: 51px;
     border-right: 2px solid #000;
     border-top-right-radius: 100px;
     background-color: #051959;
-    top: 85px;
+    top: 75px;
     left: 96px;
     z-index: 1;
   }
@@ -836,87 +839,129 @@
     transform: rotate(-5deg);
   }
   &__hand-left &__palm {
-    width: 9px;
-    height: 8px;
+    width: 8px;
+    height: 17px;
     position: absolute;
-    left: 75px;
-    top: 145px;
+    left: 70px;
+    top: 135px;
     background-color: antiquewhite;
   }
   &__hand-left &__finger1 {
-    width: 5px;
-    height: 6px;
+    width: 3px;
+    height: 13px;
     position: absolute;
-    left: 68px;
-    top: 145px;
+    left: 69px;
+    top: 142px;
     background-color: antiquewhite;
-    border: 2px solid #000;
+    border: 1px solid #000;
     border-top: none;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
   }
   &__hand-left &__finger2 {
-    width: 4px;
+    width: 3px;
     height: 7px;
     position: absolute;
-    left: 72px;
+    left: 71px;
     top: 149px;
     background-color: antiquewhite;
-    border: 2px solid #000;
+    border: 1px solid #000;
     border-top: none;
-    border-bottom-left-radius: 10px 27px;
+    border-radius: 13px;
   }
   &__hand-left &__finger3 {
-    width: 4px;
+    width: 3px;
     height: 7px;
     position: absolute;
     left: 76px;
     top: 151px;
     background-color: antiquewhite;
-    border: 2px solid #000;
+    border: 1px solid #000;
     border-top: none;
     border-bottom-left-radius: 10px 27px;
     border-bottom-right-radius: 12px;
+    z-index: 2;
   }
   &__hand-left &__finger4 {
-    width: 5px;
-    height: 4px;
+    width: 3px;
+    height: 7px;
     position: absolute;
-    left: 80px;
-    top: 148px;
+    left: 73px;
+    top: 150px;
     background-color: antiquewhite;
-    border: 2px solid #000;
+    border: 1px solid #000;
+    border-top: none;
+    border-bottom-left-radius: 10px 27px;
+    border-bottom-right-radius: 12px;
+    z-index: 2;
+  }
+  &__hand-left &__finger5 {
+    width: 4px;
+    height: 6px;
+    position: absolute;
+    left: 78px;
+    top: 146px;
+    background-color: antiquewhite;
+    border: 1px solid #000;
     border-top: none;
     border-bottom-left-radius: 6px 5px;
     border-bottom-right-radius: 8px 9px;
-    transform: rotate(-50deg);
+    transform: rotate(-18deg);
   }
   &__hand-right &__finger1 {
-    width: 5px;
+    width: 3px;
     height: 6px;
     position: absolute;
-    left: 145px;
-    top: 138px;
+    left: 148px;
+    top: 143px;
     background-color: antiquewhite;
-    border: 2px solid #000;
+    border: 1px solid #000;
     border-top: none;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
     z-index: -2;
   }
   &__hand-right &__finger2 {
-    width: 4px;
+    width: 3px;
     height: 13px;
     position: absolute;
-    left: 151px;
-    top: 130px;
+    left: 150px;
+    top: 136px;
     background-color: antiquewhite;
-    border: 2px solid #000;
+    border: 1px solid #000;
     border-top: none;
     border-bottom-left-radius: 10px 27px;
     border-bottom-right-radius: 12px;
     z-index: -2;
-    transform: rotate(-10deg);
+    transform: rotate(-6deg);
+  }
+  &__hand-right &__finger3 {
+    width: 3px;
+    height: 13px;
+    position: absolute;
+    left: 152px;
+    top: 135px;
+    background-color: antiquewhite;
+    border: 1px solid #000;
+    border-top: none;
+    border-bottom-left-radius: 10px 27px;
+    border-bottom-right-radius: 12px;
+    z-index: -2;
+    transform: rotate(-6deg);
+  }
+  &__hand-right &__finger4 {
+    width: 3px;
+    height: 13px;
+    position: absolute;
+    left: 154px;
+    top: 134px;
+    background-color: antiquewhite;
+    border: 1px solid #000;
+    border-top: none;
+    border-bottom-left-radius: 10px 27px;
+    border-bottom-right-radius: 12px;
+    z-index: -2;
+    transform: rotate(-6deg);
   }
   &:hover {
     .a-l-inf__eye#eye-left {

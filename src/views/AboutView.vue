@@ -5,7 +5,16 @@ import { RouterLink } from 'vue-router'
 <template>
   <div class="page-layout">
     <div class="page-layout__inner">
-      <p>Автор этого безобразия - Юлия Власова (то есть, я). А вот другое моё портфолио:</p>
+      <div class="page-layout__row">
+        <img
+          src="@/assets/images/author.jpg"
+          alt=""
+          width="100"
+          height="100"
+          class="author-image"
+        />
+        <p>Автор этого безобразия - Юлия Власова (то есть, я). А вот другое моё портфолио:</p>
+      </div>
       <ul>
         <li>
           <a href="https://juliavlasova.github.io/test-petrograd-group/" target="_blank"

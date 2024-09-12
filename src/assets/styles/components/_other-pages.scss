@@ -17,6 +17,17 @@
   overflow: hidden;
   overflow-y: auto;
 
+  .author-image {
+    border-radius: 100%;
+    outline: 3px solid #fff;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
   &__inner {
     max-width: 600px;
     margin: 0 auto;
@@ -26,7 +37,7 @@
     --size: 40px;
     position: fixed;
     top: 20px;
-    right: 20px;
+    right: 30px;
     width: var(--size);
     height: var(--size);
     cursor: pointer;
