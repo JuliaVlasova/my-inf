@@ -36,10 +36,6 @@
     transform: rotate(0deg);
     position: relative;
     z-index: 40;
-    animation-name: sunshine__one;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 
     &.sun {
       border-radius: 100%;
@@ -120,20 +116,10 @@
   }
 }
 
-@keyframes sunshine__one {
-  from {
-    transform: rotate(360deg);
-    box-shadow: 0px 0px 0px 1px rgba(255, 255, 26, 0.9);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-
 @keyframes sunshine__two {
   from {
     transform: rotate(-342deg);
-    box-shadow: 0px 0px 100px 1px rgba(255, 184, 77, 0.9);
+    //box-shadow: 0px 0px 100px 1px rgba(255, 184, 77, 0.9);
   }
   to {
     transform: rotate(18deg);
@@ -143,7 +129,7 @@
 @keyframes sunshine__three {
   from {
     transform: rotate(396deg);
-    box-shadow: 0px 0px 0px 1px rgba(255, 255, 0, 0.9);
+    //box-shadow: 0px 0px 0px 1px rgba(255, 255, 0, 0.9);
   }
   to {
     transform: rotate(36deg);
@@ -153,7 +139,7 @@
 @keyframes sunshine__four {
   from {
     transform: rotate(-306deg);
-    box-shadow: 0px 0px 100px 1px rgba(255, 194, 102, 0.9);
+    //box-shadow: 0px 0px 100px 1px rgba(255, 194, 102, 0.9);
   }
   to {
     transform: rotate(54deg);
@@ -163,7 +149,7 @@
 @keyframes sunshine__five {
   from {
     transform: rotate(430deg);
-    box-shadow: 0px 0px 0px 1px rgba(255, 255, 26, 0.9);
+    //box-shadow: 0px 0px 0px 1px rgba(255, 255, 26, 0.9);
   }
   to {
     transform: rotate(72deg);
