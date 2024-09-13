@@ -21,7 +21,8 @@ export function ArseneLupinPhrases() {
       'Что ответить пустоте?',
       'Я тоже люблю помолчать.',
       'Ничего не написал и хочешь от меня ответа? А вот фигушки!',
-      'Да, радоваться нечему.'
+      'Да, радоваться нечему.',
+      'Только не просите меня спеть.'
     ],
     default: [
       'Дайте-ка подумать...',
@@ -39,7 +40,8 @@ export function ArseneLupinPhrases() {
       'Честные люди всегда говорят последнее слово.',
       'Нет ничего глупее, как считать одни факты следствиями других, не имея твердой исходной точки.',
       'Самое трудное во всяком деле — это не закончить, а начать его.',
-      'Очень редко случается, что сам факт не несет в себе разгадки.'
+      'Очень редко случается, что сам факт не несет в себе разгадки.',
+      'Только не просите меня спеть.'
     ],
     hello: [
       'Привет-привет!',
@@ -63,6 +65,24 @@ export function ArseneLupinPhrases() {
     aboutMe: ['кто ты', 'ты кто']
   }
 
+  // Эмоции
+  function arseneLupinEmotions(emotion) {
+    const lupin = document.getElementById('arsene-lupin')
+
+    function addClass() {
+      lupin.classList.add(emotion)
+    }
+
+    function removeClass() {
+      lupin.classList.remove(emotion)
+    }
+
+    addClass()
+    setTimeout(() => removeClass(), 1500)
+  }
+  //@example
+  //arseneLupinEmotions('evil')
+
   function answersRandom(array) {
     // Подставить рандомный ответ
     let randomItem = Math.floor(Math.random() * array.length)
@@ -85,18 +105,27 @@ export function ArseneLupinPhrases() {
   // Главная проверка
   if (anyQuestion(questions.hello)) {
     answer = answersRandom(answers.hello)
+    arseneLupinEmotions('happy')
+  } else if (questionVal.includes('спой')) {
+    answer = 'Ваша песенка спета.'
+    arseneLupinEmotions('evil')
   } else if (anyQuestion(questions.aboutMe)) {
-    answer = answersRandom(answers.aboutMe) // а тут хочется функцию
+    answer = answersRandom(answers.aboutMe)
+    arseneLupinEmotions('pensive')
   } else {
     // Неопределенный вопрос и ответы на него
     if (questionVal.includes('?')) {
       answer = answersRandom(answers.question)
+      arseneLupinEmotions('sad')
     } else if (questionVal.includes('!')) {
       answer = answersRandom(answers.exclamation)
+      arseneLupinEmotions('surprised')
     } else if (questionVal == '' || questionVal == ' ') {
       answer = answersRandom(answers.null)
+      arseneLupinEmotions('pensive')
     } else {
       answer = answersRandom(answers.default)
+      // Random emotion
     }
   }
 
@@ -110,3 +139,5 @@ export function ArseneLupinPhrases() {
 //Допилить мобильную версию звезд
 //Ответы разбить на темы, и пусть его иногда заносит, а если в вопросе будет "стоп", "хватит", "эй", "сколько можно", выносить его из темы в общие фразы
 // Сохранять диалоги с юзерами   https://www.npmjs.com/package/github-db
+// рандомные эмоции
+// щекотно при ховере
