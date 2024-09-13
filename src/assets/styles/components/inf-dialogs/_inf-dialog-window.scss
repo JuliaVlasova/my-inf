@@ -15,6 +15,10 @@
     width: 90%;
   }
 
+  @media screen and (max-height: 620px) and (min-width: 530px) {
+    bottom: 100px;
+  }
+
   &::after {
     content: '';
     position: absolute;
@@ -29,6 +33,11 @@
       bottom: -18px;
       right: 154px;
       transform: rotate(218deg);
+    }
+
+    @media screen and (max-height: 620px) and (min-width: 530px) {
+      bottom: 111px;
+      right: -20px;
     }
 
     .l-a-wrapper_night & {
@@ -77,6 +86,8 @@
     max-height: 115px;
     overflow: hidden;
     overflow-y: auto;
+    position: relative;
+    z-index: 10;
 
     &::-webkit-scrollbar {
       width: 8px;

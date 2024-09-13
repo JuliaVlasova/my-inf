@@ -5,7 +5,7 @@ export function ArseneLupinPhrases() {
   let answer = dialogAnswer.value
 
   //Библиотека реакций
-  const reactions = ['happy', 'sad', 'evil', 'pensive', 'surprised']
+  const reactions = ['happy', 'sad', 'evil', 'pensive', 'surprised', 'glance']
 
   // Библиотека ответов
   const answers = {
@@ -136,11 +136,10 @@ export function ArseneLupinPhrases() {
       emotions('surprised')
     } else if (questionVal == '' || questionVal == ' ') {
       answer = answersRandom(answers.null)
-      emotions('pensive')
+      emotions(randomEmotions(reactions))
     } else {
       answer = answersRandom(answers.default)
       emotions(randomEmotions(reactions))
-      // Random emotion
     }
   }
 

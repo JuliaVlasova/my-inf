@@ -7,6 +7,9 @@
     <div class="stars-container__star" id="star3"></div>
     <div class="stars-container__star" id="star4"></div>
     <div class="stars-container__star" id="star5"></div>
+    <div class="stars-container__star" id="star6"></div>
+    <div class="stars-container__star" id="star7"></div>
+    <div class="stars-container__star" id="star8"></div>
   </div>
 </template>
 
@@ -44,8 +47,8 @@
 
   #star1 {
     animation: star 3s linear infinite;
-    left: 30%;
-    top: 40px;
+    left: 20%;
+    top: 140px;
   }
 
   #star2 {
@@ -73,6 +76,24 @@
     animation: star 6s linear infinite;
     left: 80%;
     top: 222px;
+  }
+
+  #star6 {
+    animation: star 4s linear infinite;
+    left: 27%;
+    bottom: 200px;
+  }
+
+  #star7 {
+    animation: star 3s linear infinite;
+    left: 50%;
+    bottom: 300px;
+  }
+
+  #star8 {
+    animation: star 5s linear infinite;
+    right: 10%;
+    bottom: 350px;
   }
 }
 

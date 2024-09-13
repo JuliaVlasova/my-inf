@@ -121,6 +121,18 @@
   }
 }
 
+@mixin glance() {
+  .a-l-inf {
+    &__eye#eye-left .a-l-inf__eyeball {
+      animation: glance 0.5s ease-in-out infinite;
+    }
+
+    &__eye#eye-right .a-l-inf__eyeball {
+      animation: glance 0.5s ease-in-out infinite;
+    }
+  }
+}
+
 @mixin surprised() {
   .a-l-inf {
     &__mouth-line {
@@ -1071,6 +1083,10 @@
   &.surprised {
     @include surprised();
   }
+
+  &.glance {
+    @include glance();
+  }
 }
 
 @keyframes move-eyeballs {
@@ -1088,6 +1104,20 @@
 
   75% {
     transform: translate(-2px, 4px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes glance {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(0px, 9px);
   }
 
   100% {
