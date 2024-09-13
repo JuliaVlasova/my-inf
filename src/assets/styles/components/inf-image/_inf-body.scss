@@ -64,9 +64,61 @@
 }
 
 @mixin sad() {
+  .a-l-inf {
+    &__mouth-line {
+      border-radius: 5px;
+    }
+
+    &__lower-lip {
+      top: 82px;
+      left: 28px;
+      transform: rotate(44deg);
+    }
+
+    &__eyebrow#eyebrow-left {
+      transform: rotate(73deg);
+    }
+
+    &__eyebrow#eyebrow-right {
+      transform: rotate(103deg);
+    }
+
+    &__eye#eye-left .a-l-inf__eyelid#eyelid-upper {
+      left: -1px;
+    }
+
+    &__eye#eye-right .a-l-inf__eyelid#eyelid-upper {
+      left: -1px;
+    }
+  }
 }
 
 @mixin pensive() {
+  .a-l-inf {
+    &__eye#eye-left .a-l-inf__eyeball {
+      animation: move-eyeballs 2s linear infinite;
+    }
+
+    &__eye#eye-right .a-l-inf__eyeball {
+      animation: move-eyeballs 2s linear infinite;
+    }
+
+    &__eye#eye-left .a-l-inf__eyelid#eyelid-upper {
+      left: -3px;
+    }
+
+    &__eye#eye-right .a-l-inf__eyelid#eyelid-upper {
+      left: -3px;
+    }
+
+    &__eyebrow#eyebrow-left {
+      transform: rotate(73deg);
+    }
+
+    &__eyebrow#eyebrow-right {
+      transform: rotate(103deg);
+    }
+  }
 }
 
 @mixin surprised() {
@@ -1018,5 +1070,27 @@
 
   &.surprised {
     @include surprised();
+  }
+}
+
+@keyframes move-eyeballs {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(2px, 3px);
+  }
+
+  50% {
+    transform: translate(0px, 9px);
+  }
+
+  75% {
+    transform: translate(-2px, 4px);
+  }
+
+  100% {
+    transform: translate(0, 0);
   }
 }

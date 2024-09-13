@@ -4,6 +4,9 @@ export function ArseneLupinPhrases() {
   let questionVal = dialogQuestion.value
   let answer = dialogAnswer.value
 
+  //Библиотека реакций
+  const reactions = ['happy', 'sad', 'evil', 'pensive', 'surprised']
+
   // Библиотека ответов
   const answers = {
     question: [
@@ -62,11 +65,19 @@ export function ArseneLupinPhrases() {
   // Библиотека вопросов
   const questions = {
     hello: ['привет', 'здравствуй', 'куку', 'ку-ку'],
-    aboutMe: ['кто ты', 'ты кто']
+    aboutMe: ['кто ты', 'ты кто'],
+    sing: ['спой'],
+    smile: ['улыбнись']
   }
 
   // Эмоции
-  function arseneLupinEmotions(emotion) {
+  function randomEmotions(array) {
+    let randomItem = Math.floor(Math.random() * array.length)
+    let randomEmotion = array[randomItem]
+    return randomEmotion
+  }
+
+  function emotions(emotion) {
     const lupin = document.getElementById('arsene-lupin')
 
     function addClass() {
@@ -78,10 +89,10 @@ export function ArseneLupinPhrases() {
     }
 
     addClass()
-    setTimeout(() => removeClass(), 1500)
+    setTimeout(() => removeClass(), 2000)
   }
   //@example
-  //arseneLupinEmotions('evil')
+  //emotions('evil')
 
   function answersRandom(array) {
     // Подставить рандомный ответ
@@ -105,26 +116,30 @@ export function ArseneLupinPhrases() {
   // Главная проверка
   if (anyQuestion(questions.hello)) {
     answer = answersRandom(answers.hello)
-    arseneLupinEmotions('happy')
-  } else if (questionVal.includes('спой')) {
+    emotions('happy')
+  } else if (anyQuestion(questions.sing)) {
     answer = 'Ваша песенка спета.'
-    arseneLupinEmotions('evil')
+    emotions('evil')
+  } else if (anyQuestion(questions.smile)) {
+    answer = 'Ну ладно.'
+    emotions('happy')
   } else if (anyQuestion(questions.aboutMe)) {
     answer = answersRandom(answers.aboutMe)
-    arseneLupinEmotions('pensive')
+    emotions('pensive')
   } else {
     // Неопределенный вопрос и ответы на него
     if (questionVal.includes('?')) {
       answer = answersRandom(answers.question)
-      arseneLupinEmotions('sad')
+      emotions('sad')
     } else if (questionVal.includes('!')) {
       answer = answersRandom(answers.exclamation)
-      arseneLupinEmotions('surprised')
+      emotions('surprised')
     } else if (questionVal == '' || questionVal == ' ') {
       answer = answersRandom(answers.null)
-      arseneLupinEmotions('pensive')
+      emotions('pensive')
     } else {
       answer = answersRandom(answers.default)
+      emotions(randomEmotions(reactions))
       // Random emotion
     }
   }
