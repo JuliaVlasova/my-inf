@@ -35,9 +35,11 @@
     &__mouth-line {
       border-top-left-radius: 14px 7px;
     }
+
     &__head {
       top: 3px;
     }
+
     &__ear#ear-right {
       top: 38px;
     }
@@ -95,6 +97,10 @@
 
 @mixin pensive() {
   .a-l-inf {
+    &__head {
+      transform: rotate(-100deg);
+    }
+
     &__eye#eye-left .a-l-inf__eyeball {
       animation: move-eyeballs 2s linear infinite;
     }
@@ -123,6 +129,10 @@
 
 @mixin glance() {
   .a-l-inf {
+    &__head {
+      top: 3px;
+    }
+
     &__eye#eye-left .a-l-inf__eyeball {
       animation: glance 0.5s ease-in-out infinite;
     }
@@ -185,7 +195,9 @@
     border: 1px solid #373333;
     z-index: 5;
     border-radius: 100%;
+    transition: all 200ms ease-in-out;
   }
+
   &__hair-a-l-inf {
     position: absolute;
     width: 100%;
@@ -203,6 +215,7 @@
         top: -15px;
         left: 39px;
       }
+
       .a-l-inf__hair2 {
         width: 30px;
         height: 30px;
@@ -212,6 +225,7 @@
         top: -15px;
         left: 55px;
       }
+
       .a-l-inf__hair3 {
         width: 35px;
         height: 40px;
@@ -221,6 +235,7 @@
         top: -5px;
         left: 65px;
       }
+
       .a-l-inf__hair4 {
         width: 13px;
         height: 10px;
@@ -230,6 +245,7 @@
         top: 76px;
         left: 67px;
       }
+
       .a-l-inf__hair5 {
         width: 23px;
         height: 16px;
@@ -239,6 +255,7 @@
         top: 69px;
         left: 54px;
       }
+
       .a-l-inf__hair6 {
         width: 30px;
         height: 30px;
@@ -248,6 +265,7 @@
         top: 47px;
         left: 71px;
       }
+
       .a-l-inf__hair7 {
         width: 40px;
         height: 40px;
@@ -257,6 +275,7 @@
         top: 20px;
         left: 68px;
       }
+
       .a-l-inf__hair8 {
         width: 20px;
         height: 20px;
@@ -266,6 +285,7 @@
         top: 50px;
         left: 71px;
       }
+
       .a-l-inf__hair9 {
         width: 20px;
         height: 20px;
@@ -291,6 +311,7 @@
         top: -15px;
         left: 39px;
       }
+
       .a-l-inf__hair2 {
         width: 30px;
         height: 30px;
@@ -300,6 +321,7 @@
         top: -15px;
         left: 55px;
       }
+
       .a-l-inf__hair3 {
         width: 35px;
         height: 40px;
@@ -309,6 +331,7 @@
         top: -5px;
         left: 65px;
       }
+
       .a-l-inf__hair4 {
         width: 13px;
         height: 10px;
@@ -318,6 +341,7 @@
         top: 76px;
         left: 67px;
       }
+
       .a-l-inf__hair5 {
         width: 23px;
         height: 16px;
@@ -327,6 +351,7 @@
         top: 69px;
         left: 54px;
       }
+
       .a-l-inf__hair6 {
         width: 30px;
         height: 30px;
@@ -336,6 +361,7 @@
         top: 47px;
         left: 71px;
       }
+
       .a-l-inf__hair7 {
         width: 40px;
         height: 40px;
@@ -345,6 +371,7 @@
         top: 20px;
         left: 68px;
       }
+
       .a-l-inf__hair8 {
         width: 20px;
         height: 20px;
@@ -354,6 +381,7 @@
         top: 50px;
         left: 71px;
       }
+
       .a-l-inf__hair9 {
         width: 20px;
         height: 20px;
@@ -437,6 +465,7 @@
     top: 108px;
     z-index: 2;
   }
+
   &__eye#eye-left {
     width: 12px;
     height: 19px;
@@ -462,6 +491,7 @@
       top: 1px;
       z-index: 3;
     }
+
     .a-l-inf__eyelid#eyelid-lower {
       width: 24px;
       height: 1px;
@@ -534,6 +564,7 @@
       top: 1px;
       z-index: 3;
     }
+
     .a-l-inf__eyelid#eyelid-lower {
       width: 24px;
       height: 1px;

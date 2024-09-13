@@ -37,5 +37,3 @@ onMounted(() => {
     <div class="dialog__button" id="dialog-button" @click="updateQuestion">Отправить</div>
   </div>
 </template>
-
-<style lang="scss" scoped></style>

@@ -21,5 +21,3 @@ defineExpose({
     {{ buttonText }}
   </button>
 </template>
-
-<style lang="scss" scoped></style>
