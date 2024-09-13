@@ -98,11 +98,6 @@
     font-size: 22px;
   }
 
-  ul {
-    li {
-    }
-  }
-
   a {
     .l-a-wrapper_night & {
       color: map-get($colors, 'background-day');
