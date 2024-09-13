@@ -1,4 +1,4 @@
-.waveWrapper {
+.wave-wrapper {
   overflow: hidden;
   position: absolute;
   left: 0;
@@ -6,32 +6,32 @@
   bottom: 0;
   top: 0;
   margin: auto;
-}
 
-.waveWrapperInner {
-  position: absolute;
-  width: 100%;
-  overflow: hidden;
-  height: 100%;
-  bottom: -1px;
+  &__inner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: -1px;
 
-  .l-a-wrapper_night & {
-    mix-blend-mode: soft-light;
+    &_top {
+      z-index: 15;
+      opacity: 0.5;
+    }
+
+    &_middle {
+      z-index: 10;
+      opacity: 0.75;
+    }
+
+    &_bottom {
+      z-index: 5;
+    }
+
+    .l-a-wrapper_night & {
+      mix-blend-mode: soft-light;
+    }
   }
-}
-
-.bgTop {
-  z-index: 15;
-  opacity: 0.5;
-}
-
-.bgMiddle {
-  z-index: 10;
-  opacity: 0.75;
-}
-
-.bgBottom {
-  z-index: 5;
 }
 
 .wave {
@@ -43,43 +43,49 @@
   background-repeat: repeat no-repeat;
   background-position: 0 bottom;
   transform-origin: center bottom;
+
+  &_top {
+    background-size: 50% 100px;
+    background-image: url('@/assets/images/waves/wave-top.png');
+  }
+
+  &_middle {
+    background-size: 50% 120px;
+    background-image: url('@/assets/images/waves/wave-mid.png');
+  }
+
+  &_bottom {
+    background-size: 50% 100px;
+    background-image: url('@/assets/images/waves/wave-bot.png');
+  }
 }
 
-.waveTop {
-  background-size: 50% 100px;
-  background-image: url('@/assets/images/waves/wave-top.png');
+.wave-wrapper_animated {
+  .wave {
+    &_top {
+      animation: move-wave 3s linear infinite;
+      animation-delay: 1s;
+    }
+
+    &_middle {
+      animation: move-wave 10s linear infinite;
+    }
+
+    &_bottom {
+      animation: move-wave 15s linear infinite;
+    }
+  }
 }
 
-.waveAnimation .waveTop {
-  animation: move-wave 3s;
-  animation-delay: 1s;
-}
-
-.waveMiddle {
-  background-size: 50% 120px;
-  background-image: url('@/assets/images/waves/wave-mid.png');
-}
-
-.waveAnimation .waveMiddle {
-  animation: move_wave 10s linear infinite;
-}
-
-.waveBottom {
-  background-size: 50% 100px;
-  background-image: url('@/assets/images/waves/wave-bot.png');
-}
-
-.waveAnimation .waveBottom {
-  animation: move_wave 15s linear infinite;
-}
-
-@keyframes move_wave {
+@keyframes move-wave {
   0% {
     transform: translateX(0) translateZ(0) scaleY(1);
   }
+
   50% {
     transform: translateX(-25%) translateZ(0) scaleY(0.55);
   }
+
   100% {
     transform: translateX(-50%) translateZ(0) scaleY(1);
   }
