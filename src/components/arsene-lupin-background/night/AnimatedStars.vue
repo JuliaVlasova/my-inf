@@ -16,7 +16,7 @@
 <style lang="scss" scoped>
 .stars-container {
   position: absolute;
-  z-index: 20;
+  z-index: 1;
   width: 100%;
   height: 100%;
   top: 0;
