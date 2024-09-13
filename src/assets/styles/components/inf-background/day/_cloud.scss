@@ -1,0 +1,151 @@
+@use '../../../variables' as *;
+@use 'sass:color';
+
+.cloud-wrapper {
+  position: absolute;
+  top: 20%;
+  right: -800px;
+  width: 330px;
+  height: 150px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    width: 90%;
+    height: 2px;
+    background: map-get($colors, 'background-night');
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+    width: 40%;
+    height: 2px;
+    background: map-get($colors, 'background-night');
+  }
+
+  .cloud {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &__inner {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      bottom: -20px;
+      left: 0;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    &__block {
+      border-radius: 100%;
+      width: var(--size);
+      height: var(--size);
+      background: color.change(map-get($colors, 'background-night'), $alpha: 0.2);
+      border-top: 2px solid #000;
+      flex: none;
+
+      &_1 {
+        --size: 70px;
+      }
+
+      &_2 {
+        --size: 80px;
+        margin-left: -22px;
+      }
+
+      &_3 {
+        --size: 110px;
+        margin-left: -30px;
+      }
+
+      &_4 {
+        --size: 100px;
+        margin-left: -40px;
+      }
+
+      &_5 {
+        --size: 60px;
+        margin-left: -20px;
+      }
+
+      &_6 {
+        --size: 40px;
+        margin-left: -20px;
+      }
+    }
+  }
+
+  .rain {
+    display: none;
+    width: 100%;
+    position: absolute;
+    bottom: -320px;
+    left: -45px;
+    justify-content: space-around;
+
+    &__drop {
+      width: 1px;
+      height: 300px;
+      border-left: 1px dashed map-get($colors, 'background-night');
+      transform: rotate(20deg);
+    }
+  }
+
+  &.darken {
+    .cloud {
+      &__block {
+        background: map-get($colors, 'background-night');
+        animation: cloud-darken 1s ease-in-out;
+      }
+    }
+  }
+
+  &.rain {
+    .rain {
+      display: flex;
+    }
+  }
+
+  &.disappear {
+    opacity: 0;
+    animation: cloud-opacity 2s linear;
+
+    .rain {
+      display: none;
+    }
+  }
+
+  &.out-from-screen {
+    right: -800px;
+  }
+}
+
+@keyframes cloud-darken {
+  from {
+    background: color.change(map-get($colors, 'background-night'), $alpha: 0.2);
+  }
+
+  to {
+    background: map-get($colors, 'background-night');
+  }
+}
+
+@keyframes cloud-opacity {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

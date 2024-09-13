@@ -9,7 +9,8 @@ import AnimatedLighthouse from './components/arsene-lupin-background/AnimatedLig
 import DayNightButton from './components/arsene-lupin-background/DayNightButton.vue'
 import AnimatedStars from './components/arsene-lupin-background/night/AnimatedStars.vue'
 import AnimatedIsland from './components/arsene-lupin-background/AnimatedIsland.vue'
-import ArseneLupinDialogWindow from './components/arsene-lupin-dialogs/ArseneLupinDialogWidow.vue'
+import AnimatedCloud from './components/arsene-lupin-background/day/AnimatedCloud.vue'
+import ArseneLupinDialogWindow from './components/arsene-lupin-dialogs/ArseneLupinDialogWindow.vue'
 
 const day = ref(true)
 
@@ -35,6 +36,7 @@ function changeDay(event) {
         <AnimatedSun />
         <AnimatedLighthouse />
         <AnimatedStars v-show="!day" />
+        <AnimatedCloud v-show="day" />
         <AnimatedIsland />
       </div>
     </article>
