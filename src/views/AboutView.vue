@@ -13,7 +13,9 @@ import { RouterLink } from 'vue-router'
           height="100"
           class="author-image"
         />
-        <p>Автор этого безобразия - Юлия Власова (то есть, я). А вот другое моё портфолио:</p>
+        <p class="page-layout__intro">
+          Автор этого безобразия - Юлия Власова (то есть, я). А вот другое моё портфолио:
+        </p>
       </div>
       <ul>
         <li>

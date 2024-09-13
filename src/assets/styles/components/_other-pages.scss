@@ -26,6 +26,17 @@
     display: flex;
     align-items: center;
     gap: 20px;
+
+    @media screen and (max-width: 599px) {
+      flex-direction: column;
+    }
+  }
+
+  &__intro {
+    @media screen and (max-width: 599px) {
+      text-align: center;
+      margin-top: 0;
+    }
   }
 
   &__inner {
