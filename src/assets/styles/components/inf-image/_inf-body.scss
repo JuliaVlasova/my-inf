@@ -101,6 +101,12 @@
       transform: rotate(-100deg);
     }
 
+    &__ear#ear-right {
+      transform: rotate(-106deg);
+      left: 147px;
+      top: 27px;
+    }
+
     &__eye#eye-left .a-l-inf__eyeball {
       animation: move-eyeballs 2s linear infinite;
     }
@@ -131,6 +137,10 @@
   .a-l-inf {
     &__head {
       top: 3px;
+    }
+
+    &__ear#ear-right {
+      top: 38px;
     }
 
     &__eye#eye-left .a-l-inf__eyeball {
@@ -195,7 +205,6 @@
     border: 1px solid #373333;
     z-index: 5;
     border-radius: 100%;
-    transition: all 200ms ease-in-out;
   }
 
   &__hair-a-l-inf {
