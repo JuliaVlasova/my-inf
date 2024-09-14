@@ -13,7 +13,10 @@ export function ArseneLupinPhrases() {
       'Ты что-то спросил, да?',
       'Не пойму, что ты пытаешься спросить',
       'Спрашиваешь? Сейчас отвечу. Секундочку',
-      'Откуда мне знать? Вы задаете дурацкие вопросы, мой дорогой!'
+      'Откуда мне знать? Вы задаете дурацкие вопросы, мой дорогой!',
+      'Не знаю.',
+      'Без понятия, честно.',
+      'А вы что об этом думаете?'
     ],
     exclamation: [
       'И нечего тут восклицать!',
@@ -44,7 +47,9 @@ export function ArseneLupinPhrases() {
       'Нет ничего глупее, как считать одни факты следствиями других, не имея твердой исходной точки.',
       'Самое трудное во всяком деле — это не закончить, а начать его.',
       'Очень редко случается, что сам факт не несет в себе разгадки.',
-      'Только не просите меня спеть.'
+      'Всё бы отдал, чтобы узнать, что у вас на уме.',
+      'Выражайтесь яснее.',
+      'Говорите так, чтобы я вас понимал.'
     ],
     hello: [
       'Привет-привет!',
@@ -90,6 +95,12 @@ export function ArseneLupinPhrases() {
       'От верблюда.',
       'Из далёкой галактики.',
       'Из суровых пустынь.'
+    ],
+    uMenya: [
+      'У меня тоже.',
+      'И у меня. Вот так совпадение!',
+      'А у меня нет.',
+      'У меня то же самое, представляете?'
     ]
   }
 
@@ -103,7 +114,8 @@ export function ArseneLupinPhrases() {
     when: ['когда'],
     where: ['где'],
     whereTo: ['куда'],
-    whereFrom: ['откуда']
+    whereFrom: ['откуда'],
+    uMenya: ['у меня']
   }
 
   // Эмоции
@@ -176,7 +188,10 @@ export function ArseneLupinPhrases() {
     emotions(randomEmotions(reactions))
   } else if (anyQuestion(questions.when)) {
     answer = answersRandom(answers.when)
-    emotions(randomEmotions(reactions)) // Тут нужна функция одной строкой
+    emotions(randomEmotions(reactions))
+  } else if (anyQuestion(questions.uMenya)) {
+    answer = answersRandom(answers.uMenya)
+    emotions(randomEmotions(reactions))
   } else {
     // Неопределенный вопрос и ответы на него
     if (questionVal.includes('?')) {
