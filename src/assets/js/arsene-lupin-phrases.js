@@ -59,6 +59,37 @@ export function ArseneLupinPhrases() {
       'Нет пределов для прогресса. Наш век буквально кишит мелкими изобретениями, делающими жизнь и в самом деле очаровательной и прекрасной. И такой забавной!.. Особенно если умеешь играть ею так, как я',
       'Пусть никто и никогда не сможет с полной уверенностью сказать: это Арсен Люпен. Главное, чтобы все безошибочно говорили: это сделал Арсен Люпен.',
       'Я умер как человек, но жив как француз.'
+    ],
+    why: [
+      'Сам не пойму.',
+      'Здесь какая-то загадка.',
+      'Тот же вопрос к вам, уважаемый собеседник.',
+      'Никто не знает, почему.'
+    ],
+    when: [
+      'Когда рак на горе свистнет.',
+      'Сложно сказать.',
+      'Когда в одну линию сойдутся все планеты.',
+      'Когда-то давным-давно.',
+      'Осенью, когда опадут все листья и призраки вырвуются на волю из заброшенных могил...'
+    ],
+    where: [
+      'Где-то далеко.',
+      'На северном полюсе.',
+      'В странах, где ещё едят людей.',
+      'В одной крупной компании.'
+    ],
+    whereTo: [
+      'Туда, где мёдом намазано.',
+      'Туда, где хорошо.',
+      'В лес, где много диких обезьян.',
+      'К тебе домой, конечно же.'
+    ],
+    whereFrom: [
+      'Оттуда, где крутятся водяные смерчи.',
+      'От верблюда.',
+      'Из далёкой галактики.',
+      'Из суровых пустынь.'
     ]
   }
 
@@ -67,7 +98,12 @@ export function ArseneLupinPhrases() {
     hello: ['привет', 'здравствуй', 'куку', 'ку-ку'],
     aboutMe: ['кто ты', 'ты кто'],
     sing: ['спой'],
-    smile: ['улыбнись']
+    smile: ['улыбнись'],
+    why: ['почему', 'зачем'],
+    when: ['когда'],
+    where: ['где'],
+    whereTo: ['куда'],
+    whereFrom: ['откуда']
   }
 
   // Эмоции
@@ -94,15 +130,15 @@ export function ArseneLupinPhrases() {
   //@example
   //emotions('evil')
 
+  // Подставить рандомный ответ
   function answersRandom(array) {
-    // Подставить рандомный ответ
     let randomItem = Math.floor(Math.random() * array.length)
     let randomAnswer = array[randomItem]
     return randomAnswer
   }
 
+  // Проверка вопроса на соответствие ответам
   function anyQuestion(array) {
-    // Проверка вопроса на соответствие ответам
     let checked = false
     array.forEach((item) => {
       let pattern = new RegExp(String.raw`${item}`, 'i')
@@ -126,6 +162,21 @@ export function ArseneLupinPhrases() {
   } else if (anyQuestion(questions.aboutMe)) {
     answer = answersRandom(answers.aboutMe)
     emotions('pensive')
+  } else if (anyQuestion(questions.why)) {
+    answer = answersRandom(answers.why)
+    emotions('pensive')
+  } else if (anyQuestion(questions.where)) {
+    answer = answersRandom(answers.where)
+    emotions(randomEmotions(reactions))
+  } else if (anyQuestion(questions.whereTo) && !anyQuestion(questions.whereFrom)) {
+    answer = answersRandom(answers.whereTo)
+    emotions(randomEmotions(reactions))
+  } else if (anyQuestion(questions.whereFrom)) {
+    answer = answersRandom(answers.whereFrom)
+    emotions(randomEmotions(reactions))
+  } else if (anyQuestion(questions.when)) {
+    answer = answersRandom(answers.when)
+    emotions(randomEmotions(reactions)) // Тут нужна функция одной строкой
   } else {
     // Неопределенный вопрос и ответы на него
     if (questionVal.includes('?')) {
@@ -137,6 +188,15 @@ export function ArseneLupinPhrases() {
     } else if (questionVal == '' || questionVal == ' ') {
       answer = answersRandom(answers.null)
       emotions(randomEmotions(reactions))
+    } else if (questionVal !== '' && questionVal !== ' ') {
+      let booleanRandom = Math.floor(Math.random() * 10)
+      if (booleanRandom > 5) {
+        answer = 'А что такое ' + questionVal + '?'
+        emotions('surprised')
+      } else {
+        answer = answersRandom(answers.default)
+        emotions(randomEmotions(reactions))
+      }
     } else {
       answer = answersRandom(answers.default)
       emotions(randomEmotions(reactions))
