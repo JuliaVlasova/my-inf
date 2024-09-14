@@ -2,7 +2,10 @@ export function AnimateCloud() {
   window.onload = function () {
     const cloud = document.getElementById('cloud')
     let newCoord
-    let intervalTime = 25000
+    const intervalTime = [25000, 30000, 35000, 40000, 45000, 50000]
+    const cloudSizes = [0.4, 0.6, 0.8, 1]
+    let randomInterval
+    let randomSize
 
     function animate({ duration, draw, timing }) {
       let start = performance.now()
@@ -26,17 +29,42 @@ export function AnimateCloud() {
 
     function randomXCoord() {
       let coord = Math.floor(Math.random() * 100)
-      return coord
+      if (coord > 20) {
+        return coord
+      } else {
+        coord = 40
+        return coord
+      }
     }
 
+    function randomYCoord() {
+      let coord = Math.floor(Math.random() * 100)
+      if (coord >= 10 && coord <= 50) {
+        return coord
+      } else {
+        coord = 20
+        return coord
+      }
+    }
+
+    function randomArrayItem(array) {
+      let randomItem = Math.floor(Math.random() * array.length)
+      let randomInterval = array[randomItem]
+      return randomInterval
+    }
+
+    randomInterval = randomArrayItem(intervalTime)
+
+    // Set random settings for each animation interval
     setInterval(function () {
       newCoord = randomXCoord()
-    }, intervalTime) // random from 9000 to 30 000
-
-    // Add randomYCoord
+      randomSize = randomArrayItem(cloudSizes)
+      cloud.style.transform = 'scale(' + randomSize + ')'
+      cloud.style.top = randomYCoord() + '%'
+    }, randomInterval)
 
     function goToScreen(progress) {
-      cloud.style.right = progress * newCoord + '%' // random %
+      cloud.style.right = progress * newCoord + '%' // random right position
     }
 
     function darken() {
@@ -89,8 +117,8 @@ export function AnimateCloud() {
 
           setTimeout(() => {
             clearClasses()
-          }, intervalTime) // random from 9000 to 30 000
-        }, intervalTime) // random from 9000 to 30 000
+          }, randomInterval) // random interval from 25000 to 50000
+        }, randomInterval) // random interval from 25000 to 50000
       }
     })
   }
