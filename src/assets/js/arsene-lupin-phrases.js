@@ -49,9 +49,9 @@ export function ArseneLupinPhrases() {
       'Самое трудное во всяком деле — это не закончить, а начать его.',
       'Очень редко случается, что сам факт не несет в себе разгадки.',
       'Всё бы отдал, чтобы узнать, что у вас на уме.',
-      'Выражайтесь яснее.',
-      'Развейте свою мысль.',
-      'Говорите так, чтобы я вас понимал.'
+      (storedUserName ?? '') + ', выражайтесь яснее.',
+      (storedUserName ?? '') + ', развейте свою мысль.',
+      (storedUserName ?? '') + ', говорите так, чтобы я вас понимал.'
     ],
     hello: [
       'Привет-привет!',
@@ -70,7 +70,7 @@ export function ArseneLupinPhrases() {
     why: [
       'Сам не пойму.',
       'Здесь какая-то загадка.',
-      'Тот же вопрос к вам, уважаемый собеседник.',
+      'Тот же вопрос к вам, ' + (storedUserName ?? '') + '.',
       'Никто не знает, почему.'
     ],
     when: [
@@ -185,7 +185,7 @@ export function ArseneLupinPhrases() {
     emotions('pensive')
   } else if (anyQuestion(questions.userName) && !anyQuestion(questions.whatIsMyName)) {
     let userNameArray = questionVal.split(' ')
-    let userName = userNameArray[2]
+    let userName = userNameArray[2].trim()
     let userNameAnswers = [
       'Понял-понял, тебя зовут ' + userName,
       'Приятно познакомиться, ' + userName + '!'
