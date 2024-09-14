@@ -190,8 +190,8 @@ export function ArseneLupinPhrases() {
       emotions(randomEmotions(reactions))
     } else if (questionVal !== '' && questionVal !== ' ') {
       let booleanRandom = Math.floor(Math.random() * 10)
-      if (booleanRandom > 5) {
-        answer = 'А что такое ' + questionVal + '?'
+      if (booleanRandom > 5 && !questionVal.includes(' ')) {
+        answer = 'А что такое "' + questionVal + '"?'
         emotions('surprised')
       } else {
         answer = answersRandom(answers.default)
