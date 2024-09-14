@@ -3,6 +3,7 @@ export function ArseneLupinPhrases() {
   const dialogQuestion = document.getElementById('dialog-question')
   let questionVal = dialogQuestion.value
   let answer = dialogAnswer.value
+  let storedUserName = localStorage.getItem('userName')
 
   //Библиотека реакций
   const reactions = ['happy', 'sad', 'evil', 'pensive', 'surprised', 'glance']
@@ -49,6 +50,7 @@ export function ArseneLupinPhrases() {
       'Очень редко случается, что сам факт не несет в себе разгадки.',
       'Всё бы отдал, чтобы узнать, что у вас на уме.',
       'Выражайтесь яснее.',
+      'Развейте свою мысль.',
       'Говорите так, чтобы я вас понимал.'
     ],
     hello: [
@@ -101,7 +103,12 @@ export function ArseneLupinPhrases() {
       'И у меня. Вот так совпадение!',
       'А у меня нет.',
       'У меня то же самое, представляете?'
-    ]
+    ],
+    whatIsMyName: [
+      'Тебя зовут ' + storedUserName,
+      'Если я ничего не путаю, тебя зовут ' + storedUserName
+    ],
+    iDontKnowYourName: ['Прости, мне неизвестно твоё имя.', 'А как тебя зовут?', 'Не знаю']
   }
 
   // Библиотека вопросов
@@ -115,7 +122,9 @@ export function ArseneLupinPhrases() {
     where: ['где'],
     whereTo: ['куда'],
     whereFrom: ['откуда'],
-    uMenya: ['у меня']
+    uMenya: ['у меня'],
+    userName: ['меня зовут', 'моё имя', 'мое имя'],
+    whatIsMyName: ['как меня зовут', 'какое мое имя', 'какое моё имя', 'как мое имя', 'как моё имя']
   }
 
   // Эмоции
@@ -174,6 +183,29 @@ export function ArseneLupinPhrases() {
   } else if (anyQuestion(questions.aboutMe)) {
     answer = answersRandom(answers.aboutMe)
     emotions('pensive')
+  } else if (anyQuestion(questions.userName) && !anyQuestion(questions.whatIsMyName)) {
+    let userNameArray = questionVal.split(' ')
+    let userName = userNameArray[2]
+    let userNameAnswers = [
+      'Понял-понял, тебя зовут ' + userName,
+      'Приятно познакомиться, ' + userName + '!'
+    ]
+
+    if (typeof Storage !== 'undefined') {
+      localStorage.setItem('userName', userName)
+      if (userName !== undefined) {
+        answer = answersRandom(userNameAnswers)
+        emotions('happy')
+      }
+    }
+  } else if (anyQuestion(questions.whatIsMyName)) {
+    if (storedUserName !== null && storedUserName !== undefined) {
+      answer = answersRandom(answers.whatIsMyName)
+      emotions('happy')
+    } else {
+      answer = answersRandom(answers.iDontKnowYourName)
+      emotions('sad')
+    }
   } else if (anyQuestion(questions.why)) {
     answer = answersRandom(answers.why)
     emotions('pensive')
@@ -222,7 +254,6 @@ export function ArseneLupinPhrases() {
 }
 
 //Добавить инфу вредности (режим обиды, долгое ожидание ответа)
-//Пусть записывает твое имя и другие данные
 //Анимировать море через canvas
 //Ответы разбить на темы, и пусть его иногда заносит, а если в вопросе будет "стоп", "хватит", "эй", "сколько можно", выносить его из темы в общие фразы
 // Сохранять диалоги с юзерами   https://www.npmjs.com/package/github-db
