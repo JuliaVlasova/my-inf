@@ -191,7 +191,7 @@ export function ArseneLupinPhrases() {
     } else if (userNameArray.indexOf('зовут') > 0) {
       indexOfKey = userNameArray.indexOf('зовут')
     }
-    let userName = userNameArray[indexOfKey + 1].trim()
+    let userName = userNameArray[indexOfKey + 1].trim().replace(/[.,!?]/g, '')
     let finalUserName = userName.charAt(0).toUpperCase() + userName.slice(1)
     let userNameAnswers = [
       'Понял-понял, тебя зовут ' + finalUserName,
