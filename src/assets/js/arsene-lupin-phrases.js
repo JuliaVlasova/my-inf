@@ -10,6 +10,43 @@ export function ArseneLupinPhrases() {
   let answer = dialogAnswer.value
   let storedUserName = JSON.parse(localStorage.getItem('userName'))
 
+  // Ответы с переменной
+  let specialAnswers = {
+    default: [
+      'Дайте-ка подумать...',
+      'Что-то я туплю.',
+      'Погоди, сейчас соображу.',
+      'Я пока не обучен говорить на такие темы',
+      'Мысля загружается...',
+      'Ну и что с того, стану честным! Ничего, переживу, в конце концов это не так уж и стыдно!',
+      'Надо уметь думать, а на это мало кто способен!',
+      'Когда человек ищет, он никак не может потерять время.',
+      'Чем более ловки и многочисленны мои враги, тем более скрыта моя игра.',
+      'Там, где сила не поможет, надо брать хитростью.',
+      'Никто не может творить чудеса… ни я, ни кто-либо другой. Я размышляю, делаю выводы, заключаю, но никак не могу догадываться. Только дураки догадываются.',
+      'Так и в жизни, силишься что-то предпринять, но это бессмысленно, ведь в конечном счёте всё решает судьба...',
+      'Честные люди всегда говорят последнее слово.',
+      'Нет ничего глупее, как считать одни факты следствиями других, не имея твердой исходной точки.',
+      'Самое трудное во всяком деле — это не закончить, а начать его.',
+      'Очень редко случается, что сам факт не несет в себе разгадки.',
+      'Всё бы отдал, чтобы узнать, что у вас на уме.',
+      (JSON.parse(localStorage.getItem('userName')) ?? 'Приятель') + ', выражайтесь яснее.',
+      (JSON.parse(localStorage.getItem('userName')) ?? 'Дружище') + ', развейте свою мысль.',
+      (JSON.parse(localStorage.getItem('userName')) ?? 'Дорогой друг') +
+        ', говорите так, чтобы я вас понимал.'
+    ],
+    why: [
+      'Сам не пойму.',
+      'Здесь какая-то загадка.',
+      'Тот же вопрос к вам, ' + (JSON.parse(localStorage.getItem('userName')) ?? 'дружище') + '.',
+      'Никто не знает, почему.'
+    ],
+    whatIsMyName: [
+      'Тебя зовут ' + JSON.parse(localStorage.getItem('userName')),
+      'Если я ничего не путаю, тебя зовут ' + JSON.parse(localStorage.getItem('userName'))
+    ]
+  }
+
   // Эмоции
   function randomEmotions(array) {
     let randomItem = Math.floor(Math.random() * array.length)
@@ -88,23 +125,23 @@ export function ArseneLupinPhrases() {
         emotions('happy')
         //setTimeout(window.location.reload(), 6000) // плохое решение
       } else {
-        answer = answersRandom(answers.default)
+        answer = answersRandom(specialAnswers.default)
         emotions(randomEmotions(reactions))
       }
     } else {
-      answer = answersRandom(answers.default)
+      answer = answersRandom(specialAnswers.default)
       emotions(randomEmotions(reactions))
     }
   } else if (anyQuestion(questions.whatIsMyName)) {
     if (storedUserName !== null && storedUserName !== undefined) {
-      answer = answersRandom(answers.whatIsMyName)
+      answer = answersRandom(specialAnswers.whatIsMyName)
       emotions('happy')
     } else {
       answer = answersRandom(answers.iDontKnowYourName)
       emotions('sad')
     }
   } else if (anyQuestion(questions.why)) {
-    answer = answersRandom(answers.why)
+    answer = answersRandom(specialAnswers.why)
     emotions('pensive')
   } else if (anyQuestion(questions.where)) {
     answer = answersRandom(answers.where)
@@ -138,11 +175,11 @@ export function ArseneLupinPhrases() {
         answer = 'А что такое "' + questionVal.trim() + '"?'
         emotions('surprised')
       } else {
-        answer = answersRandom(answers.default)
+        answer = answersRandom(specialAnswers.default)
         emotions(randomEmotions(reactions))
       }
     } else {
-      answer = answersRandom(answers.default)
+      answer = answersRandom(specialAnswers.default)
       emotions(randomEmotions(reactions))
     }
   }
