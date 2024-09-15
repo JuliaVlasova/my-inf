@@ -1,131 +1,11 @@
+import { answers, questions, reactions } from './arsene-lupin-phrases-library'
+
 export function ArseneLupinPhrases() {
-  const dialogAnswer = document.getElementById('dialog-answer')
-  const dialogQuestion = document.getElementById('dialog-question')
+  let dialogAnswer = document.getElementById('dialog-answer')
+  let dialogQuestion = document.getElementById('dialog-question')
   let questionVal = dialogQuestion.value
   let answer = dialogAnswer.value
-  let storedUserName = localStorage.getItem('userName')
-
-  //Библиотека реакций
-  const reactions = ['happy', 'sad', 'evil', 'pensive', 'surprised', 'glance']
-
-  // Библиотека ответов
-  const answers = {
-    question: [
-      'Ты что-то спросил, да?',
-      'Не пойму, что ты пытаешься спросить',
-      'Спрашиваешь? Сейчас отвечу. Секундочку',
-      'Откуда мне знать? Вы задаете дурацкие вопросы, мой дорогой!',
-      'Не знаю.',
-      'Без понятия, честно.',
-      'А вы что об этом думаете?'
-    ],
-    exclamation: [
-      'И нечего тут восклицать!',
-      'Сегодня твоя эмоциональность зашкаливает',
-      'Больше восклицательных знаков в студию!!! Ладно, не злись =)'
-    ],
-    null: [
-      'Что ответить пустоте?',
-      'Я тоже люблю помолчать.',
-      'Ничего не написал и хочешь от меня ответа? А вот фигушки!',
-      'Да, радоваться нечему.',
-      'Только не просите меня спеть.'
-    ],
-    default: [
-      'Дайте-ка подумать...',
-      'Что-то я туплю.',
-      'Погоди, сейчас соображу.',
-      'Я пока не обучен говорить на такие темы',
-      'Мысля загружается...',
-      'Ну и что с того, стану честным! Ничего, переживу, в конце концов это не так уж и стыдно!',
-      'Надо уметь думать, а на это мало кто способен!',
-      'Когда человек ищет, он никак не может потерять время.',
-      'Чем более ловки и многочисленны мои враги, тем более скрыта моя игра.',
-      'Там, где сила не поможет, надо брать хитростью.',
-      'Никто не может творить чудеса… ни я, ни кто-либо другой. Я размышляю, делаю выводы, заключаю, но никак не могу догадываться. Только дураки догадываются.',
-      'Так и в жизни, силишься что-то предпринять, но это бессмысленно, ведь в конечном счёте всё решает судьба...',
-      'Честные люди всегда говорят последнее слово.',
-      'Нет ничего глупее, как считать одни факты следствиями других, не имея твердой исходной точки.',
-      'Самое трудное во всяком деле — это не закончить, а начать его.',
-      'Очень редко случается, что сам факт не несет в себе разгадки.',
-      'Всё бы отдал, чтобы узнать, что у вас на уме.',
-      (storedUserName ?? 'Приятель') + ', выражайтесь яснее.',
-      (storedUserName ?? 'Дружище') + ', развейте свою мысль.',
-      (storedUserName ?? 'Дорогой друг') + ', говорите так, чтобы я вас понимал.'
-    ],
-    hello: [
-      'Привет-привет!',
-      'Здравствуй, пришелец!',
-      'Кукусики!',
-      'Здравия желаю товарищ... как вас там?'
-    ],
-    aboutMe: [
-      'Я-то? Великий и ужасный инф Арсен Люпен! Мой прародитель был чудеснейшим вором, который не грабил бедняков и вел честный образ жизни. Ну почти.',
-      'Меня зовут Арсен Люпен. А ты кто таков будешь?',
-      'Правда же, жизнь моя так прекрасна! Стоит только захотеть, не так ли, и завтра можно стать кем угодно, оратором, заводчиком, политиком, наконец… Но нет, клянусь, никогда не соглашусь на это! Я Арсен Люпен, Арсеном Люпеном и останусь.',
-      'Нет пределов для прогресса. Наш век буквально кишит мелкими изобретениями, делающими жизнь и в самом деле очаровательной и прекрасной. И такой забавной!.. Особенно если умеешь играть ею так, как я',
-      'Пусть никто и никогда не сможет с полной уверенностью сказать: это Арсен Люпен. Главное, чтобы все безошибочно говорили: это сделал Арсен Люпен.',
-      'Я умер как человек, но жив как француз.'
-    ],
-    why: [
-      'Сам не пойму.',
-      'Здесь какая-то загадка.',
-      'Тот же вопрос к вам, ' + (storedUserName ?? 'дружище') + '.',
-      'Никто не знает, почему.'
-    ],
-    when: [
-      'Когда рак на горе свистнет.',
-      'Сложно сказать.',
-      'Когда в одну линию сойдутся все планеты.',
-      'Когда-то давным-давно.',
-      'Осенью, когда опадут все листья и призраки вырвуются на волю из заброшенных могил...'
-    ],
-    where: [
-      'Где-то далеко.',
-      'На северном полюсе.',
-      'В странах, где ещё едят людей.',
-      'В одной крупной компании.'
-    ],
-    whereTo: [
-      'Туда, где мёдом намазано.',
-      'Туда, где хорошо.',
-      'В лес, где много диких обезьян.',
-      'К тебе домой, конечно же.'
-    ],
-    whereFrom: [
-      'Оттуда, где крутятся водяные смерчи.',
-      'От верблюда.',
-      'Из далёкой галактики.',
-      'Из суровых пустынь.'
-    ],
-    uMenya: [
-      'У меня тоже.',
-      'И у меня. Вот так совпадение!',
-      'А у меня нет.',
-      'У меня то же самое, представляете?'
-    ],
-    whatIsMyName: [
-      'Тебя зовут ' + storedUserName,
-      'Если я ничего не путаю, тебя зовут ' + storedUserName
-    ],
-    iDontKnowYourName: ['Прости, мне неизвестно твоё имя.', 'А как тебя зовут?', 'Не знаю']
-  }
-
-  // Библиотека вопросов
-  const questions = {
-    hello: ['привет', 'здравствуй', 'куку', 'ку-ку'],
-    aboutMe: ['кто ты', 'ты кто'],
-    sing: ['спой'],
-    smile: ['улыбнись'],
-    why: ['почему', 'зачем'],
-    when: ['когда'],
-    where: ['где'],
-    whereTo: ['куда'],
-    whereFrom: ['откуда'],
-    uMenya: ['у меня'],
-    userName: ['меня зовут', 'моё имя', 'мое имя'],
-    whatIsMyName: ['как меня зовут', 'какое мое имя', 'какое моё имя', 'как мое имя', 'как моё имя']
-  }
+  let storedUserName = JSON.parse(localStorage.getItem('userName'))
 
   // Эмоции
   function randomEmotions(array) {
@@ -191,19 +71,28 @@ export function ArseneLupinPhrases() {
     } else if (userNameArray.indexOf('зовут') > 0) {
       indexOfKey = userNameArray.indexOf('зовут')
     }
-    let userName = userNameArray[indexOfKey + 1].trim().replace(/[.,!?]/g, '')
-    let finalUserName = userName.charAt(0).toUpperCase() + userName.slice(1)
-    let userNameAnswers = [
-      'Понял-понял, тебя зовут ' + finalUserName,
-      'Приятно познакомиться, ' + finalUserName + '!'
-    ]
 
-    if (typeof Storage !== 'undefined') {
-      localStorage.setItem('userName', finalUserName)
-      if (finalUserName !== undefined) {
+    if (userNameArray[indexOfKey + 1] !== undefined) {
+      let userName = userNameArray[indexOfKey + 1].trim().replace(/[.,!?]/g, '')
+      let finalUserName = userName.charAt(0).toUpperCase() + userName.slice(1)
+
+      let userNameAnswers = [
+        'Понял-понял, тебя зовут ' + finalUserName,
+        'Приятно познакомиться, ' + finalUserName + '!'
+      ]
+
+      if (typeof Storage !== 'undefined' && finalUserName !== undefined) {
+        localStorage.setItem('userName', JSON.stringify(finalUserName))
         answer = answersRandom(userNameAnswers)
         emotions('happy')
+        //setTimeout(window.location.reload(), 6000) // плохое решение
+      } else {
+        answer = answersRandom(answers.default)
+        emotions(randomEmotions(reactions))
       }
+    } else {
+      answer = answersRandom(answers.default)
+      emotions(randomEmotions(reactions))
     }
   } else if (anyQuestion(questions.whatIsMyName)) {
     if (storedUserName !== null && storedUserName !== undefined) {
@@ -245,7 +134,7 @@ export function ArseneLupinPhrases() {
     } else if (questionVal !== '' && questionVal !== ' ') {
       let booleanRandom = Math.floor(Math.random() * 10)
       if (booleanRandom > 5 && !questionVal.includes(' ')) {
-        answer = 'А что такое "' + questionVal + '"?'
+        answer = 'А что такое "' + questionVal.trim() + '"?'
         emotions('surprised')
       } else {
         answer = answersRandom(answers.default)
