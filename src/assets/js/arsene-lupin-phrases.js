@@ -15,7 +15,7 @@ export function ArseneLupinPhrases() {
     default: [
       'Дайте-ка подумать...',
       'Что-то я туплю.',
-      'Погоди, сейчас соображу.',
+      'Погодите, сейчас соображу.',
       'Я пока не обучен говорить на такие темы',
       'Мысля загружается...',
       'Ну и что с того, стану честным! Ничего, переживу, в конце концов это не так уж и стыдно!',
@@ -42,8 +42,8 @@ export function ArseneLupinPhrases() {
       'Никто не знает, почему.'
     ],
     whatIsMyName: [
-      'Тебя зовут ' + JSON.parse(localStorage.getItem('userName')),
-      'Если я ничего не путаю, тебя зовут ' + JSON.parse(localStorage.getItem('userName'))
+      'Вас зовут ' + JSON.parse(localStorage.getItem('userName')),
+      'Если я ничего не путаю, вас зовут ' + JSON.parse(localStorage.getItem('userName'))
     ]
   }
 

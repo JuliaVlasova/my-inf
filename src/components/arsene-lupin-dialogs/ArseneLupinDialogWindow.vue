@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue'
 import { ArseneLupinPhrases } from '../../assets/js/arsene-lupin-phrases'
 
 const question = ref(null)
-const answer = ref('Ну что молчишь? Молви слово!')
+const answer = ref('Что хорошего скажете?')
 const dialogButton = document.getElementById('dialog-button')
 
 function updateQuestion() {
@@ -30,7 +30,7 @@ onMounted(() => {
       name="dialog-question"
       rows="3"
       cols="15"
-      placeholder="Поговори со мной"
+      placeholder="Поговорите со мной"
       v-on:keyup.enter="updateQuestion"
     >
     </textarea>
