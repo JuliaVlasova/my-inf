@@ -1,10 +1,5 @@
-let name = JSON.parse(localStorage.getItem('userName'))
-
-//Библиотека реакций
-const reactions = ['happy', 'sad', 'evil', 'pensive', 'surprised', 'glance']
-
 // Библиотека ответов
-const answers = {
+let answers = {
   question: [
     'Ты что-то спросил, да?',
     'Не пойму, что ты пытаешься спросить',
@@ -44,9 +39,10 @@ const answers = {
     'Самое трудное во всяком деле — это не закончить, а начать его.',
     'Очень редко случается, что сам факт не несет в себе разгадки.',
     'Всё бы отдал, чтобы узнать, что у вас на уме.',
-    (name ?? 'Приятель') + ', выражайтесь яснее.',
-    (name ?? 'Дружище') + ', развейте свою мысль.',
-    (name ?? 'Дорогой друг') + ', говорите так, чтобы я вас понимал.'
+    (JSON.parse(localStorage.getItem('userName')) ?? 'Приятель') + ', выражайтесь яснее.',
+    (JSON.parse(localStorage.getItem('userName')) ?? 'Дружище') + ', развейте свою мысль.',
+    (JSON.parse(localStorage.getItem('userName')) ?? 'Дорогой друг') +
+      ', говорите так, чтобы я вас понимал.'
   ],
   hello: [
     'Привет-привет!',
@@ -65,7 +61,7 @@ const answers = {
   why: [
     'Сам не пойму.',
     'Здесь какая-то загадка.',
-    'Тот же вопрос к вам, ' + (name ?? 'дружище') + '.',
+    'Тот же вопрос к вам, ' + (JSON.parse(localStorage.getItem('userName')) ?? 'дружище') + '.',
     'Никто не знает, почему.'
   ],
   when: [
@@ -99,24 +95,11 @@ const answers = {
     'А у меня нет.',
     'У меня то же самое, представляете?'
   ],
-  whatIsMyName: ['Тебя зовут ' + name, 'Если я ничего не путаю, тебя зовут ' + name],
+  whatIsMyName: [
+    'Тебя зовут ' + JSON.parse(localStorage.getItem('userName')),
+    'Если я ничего не путаю, тебя зовут ' + JSON.parse(localStorage.getItem('userName'))
+  ],
   iDontKnowYourName: ['Прости, мне неизвестно твоё имя.', 'А как тебя зовут?', 'Не знаю']
 }
 
-// Библиотека вопросов
-const questions = {
-  hello: ['привет', 'здравствуй', 'куку', 'ку-ку'],
-  aboutMe: ['кто ты', 'ты кто'],
-  sing: ['спой'],
-  smile: ['улыбнись'],
-  why: ['почему', 'зачем'],
-  when: ['когда'],
-  where: ['где'],
-  whereTo: ['куда'],
-  whereFrom: ['откуда'],
-  uMenya: ['у меня'],
-  userName: ['меня зовут', 'моё имя', 'мое имя'],
-  whatIsMyName: ['как меня зовут', 'какое мое имя', 'какое моё имя', 'как мое имя', 'как моё имя']
-}
-
-export { answers, questions, reactions }
+export { answers }

@@ -1,6 +1,9 @@
-import { answers, questions, reactions } from './arsene-lupin-phrases-library'
+import { answers } from './phrases-library-answers'
+import { questions } from './phrases-library-questions'
+import { reactions } from './phrases-library-reactions'
 
 export function ArseneLupinPhrases() {
+  const lupin = document.getElementById('arsene-lupin')
   let dialogAnswer = document.getElementById('dialog-answer')
   let dialogQuestion = document.getElementById('dialog-question')
   let questionVal = dialogQuestion.value
@@ -15,8 +18,6 @@ export function ArseneLupinPhrases() {
   }
 
   function emotions(emotion) {
-    const lupin = document.getElementById('arsene-lupin')
-
     function addClass() {
       lupin.classList.add(emotion)
     }
