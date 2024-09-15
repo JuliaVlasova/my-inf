@@ -185,15 +185,22 @@ export function ArseneLupinPhrases() {
     emotions('pensive')
   } else if (anyQuestion(questions.userName) && !anyQuestion(questions.whatIsMyName)) {
     let userNameArray = questionVal.split(' ')
-    let userName = userNameArray[2].trim()
+    let indexOfKey
+    if (userNameArray.indexOf('имя') > 0) {
+      indexOfKey = userNameArray.indexOf('имя')
+    } else if (userNameArray.indexOf('зовут') > 0) {
+      indexOfKey = userNameArray.indexOf('зовут')
+    }
+    let userName = userNameArray[indexOfKey + 1].trim()
+    let finalUserName = userName.charAt(0).toUpperCase() + userName.slice(1)
     let userNameAnswers = [
-      'Понял-понял, тебя зовут ' + userName,
-      'Приятно познакомиться, ' + userName + '!'
+      'Понял-понял, тебя зовут ' + finalUserName,
+      'Приятно познакомиться, ' + finalUserName + '!'
     ]
 
     if (typeof Storage !== 'undefined') {
-      localStorage.setItem('userName', userName)
-      if (userName !== undefined) {
+      localStorage.setItem('userName', finalUserName)
+      if (finalUserName !== undefined) {
         answer = answersRandom(userNameAnswers)
         emotions('happy')
       }
