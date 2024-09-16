@@ -40,10 +40,6 @@ export function ArseneLupinPhrases() {
       'Здесь какая-то загадка.',
       'Тот же вопрос к вам, ' + (JSON.parse(localStorage.getItem('userName')) ?? 'дружище') + '.',
       'Никто не знает, почему.'
-    ],
-    whatIsMyName: [
-      'Вас зовут ' + JSON.parse(localStorage.getItem('userName')),
-      'Если я ничего не путаю, вас зовут ' + JSON.parse(localStorage.getItem('userName'))
     ]
   }
 
@@ -101,6 +97,9 @@ export function ArseneLupinPhrases() {
   } else if (anyQuestion(questions.aboutMe)) {
     answer = answersRandom(answers.aboutMe)
     emotions('pensive')
+  } else if (anyQuestion(questions.mood)) {
+    answer = answersRandom(answers.mood)
+    emotions('pensive')
   } else if (anyQuestion(questions.userName) && !anyQuestion(questions.whatIsMyName)) {
     let userNameArray = questionVal.split(' ')
     let indexOfKey
@@ -115,7 +114,7 @@ export function ArseneLupinPhrases() {
       let finalUserName = userName.charAt(0).toUpperCase() + userName.slice(1)
 
       let userNameAnswers = [
-        'Понял-понял, тебя зовут ' + finalUserName,
+        'Понял-понял, вас зовут ' + finalUserName,
         'Приятно познакомиться, ' + finalUserName + '!'
       ]
 
@@ -134,7 +133,7 @@ export function ArseneLupinPhrases() {
     }
   } else if (anyQuestion(questions.whatIsMyName)) {
     if (storedUserName !== null && storedUserName !== undefined) {
-      answer = answersRandom(specialAnswers.whatIsMyName)
+      answer = answersRandom(answers.whatIsMyName) + storedUserName + '.'
       emotions('happy')
     } else {
       answer = answersRandom(answers.iDontKnowYourName)
