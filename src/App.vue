@@ -2,6 +2,8 @@
 import { RouterLink, RouterView } from 'vue-router'
 import { ref } from 'vue'
 
+import { ArseneLupinTickling } from './assets/js/arsene-lupin-tickling'
+
 import ArseneLupinBody from './components/arsene-lupin-image/ArseneLupinBody.vue'
 import AnimatedWaves from './components/arsene-lupin-background/AnimatedWaves.vue'
 import AnimatedSun from './components/arsene-lupin-background/day/AnimatedSun.vue'
@@ -29,7 +31,7 @@ function changeDay(event) {
     </nav>
     <article>
       <ArseneLupinDialogWindow />
-      <ArseneLupinBody />
+      <ArseneLupinBody @mouseover="ArseneLupinTickling" />
 
       <div class="a-l-background">
         <AnimatedWaves />

@@ -65,6 +65,39 @@
   }
 }
 
+@mixin laugh() {
+  .a-l-inf {
+    &__mouth-line {
+      border-radius: 10px;
+      transform: rotate(222deg);
+      top: 65px;
+      left: 30px;
+    }
+
+    &__lower-lip {
+      width: 21px;
+      height: 27px;
+      top: 63px;
+      left: 31px;
+      transform: rotate(-139deg);
+    }
+
+    &__eyebrow#eyebrow-left {
+      transform: rotate(73deg);
+    }
+
+    &__eyebrow#eyebrow-right {
+      transform: rotate(103deg);
+    }
+
+    &__eye#eye-left .a-l-inf__eyelid#eyelid-lower,
+    &__eye#eye-right .a-l-inf__eyelid#eyelid-lower {
+      left: -9px;
+      top: 5px;
+    }
+  }
+}
+
 @mixin sad() {
   .a-l-inf {
     &__mouth-line {
@@ -186,6 +219,11 @@
   }
 }
 // mixins of emotions END
+
+.a-l-inf.surprised.laugh .a-l-inf__mouth-line {
+  top: 76px;
+  left: 27px;
+}
 
 .a-l-inf {
   position: absolute;
@@ -1113,6 +1151,10 @@
 
   &.glance {
     @include glance();
+  }
+
+  &.laugh {
+    @include laugh();
   }
 }
 

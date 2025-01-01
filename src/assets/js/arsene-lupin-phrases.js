@@ -151,6 +151,12 @@ export function ArseneLupinPhrases() {
   } else if (anyQuestion(questions.whereFrom)) {
     answer = answersRandom(answers.whereFrom)
     emotions(randomEmotions(reactions))
+  } else if (anyQuestion(questions.doesntWant)) {
+    answer = answersRandom(answers.doesntWant)
+    emotions(randomEmotions(reactions))
+  } else if (anyQuestion(questions.want) && !anyQuestion(questions.doesntWant)) {
+    answer = answersRandom(answers.want)
+    emotions(randomEmotions(reactions))
   } else if (anyQuestion(questions.when)) {
     answer = answersRandom(answers.when)
     emotions(randomEmotions(reactions))
@@ -187,7 +193,5 @@ export function ArseneLupinPhrases() {
 }
 
 //Добавить инфу вредности (режим обиды, долгое ожидание ответа)
-//Анимировать море через canvas
 //Ответы разбить на темы, и пусть его иногда заносит, а если в вопросе будет "стоп", "хватит", "эй", "сколько можно", выносить его из темы в общие фразы
 // Сохранять диалоги с юзерами   https://www.npmjs.com/package/github-db
-// щекотно при ховере

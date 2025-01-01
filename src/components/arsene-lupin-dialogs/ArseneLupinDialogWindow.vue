@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { ArseneLupinPhrases } from '../../assets/js/arsene-lupin-phrases'
+import { ArseneLupinTickling } from '../../assets/js/arsene-lupin-tickling'
 
 const question = ref(null)
 const answer = ref('Что хорошего скажете?')
@@ -12,9 +13,16 @@ function updateQuestion() {
 }
 
 onMounted(() => {
+  const lupin = document.getElementById('arsene-lupin')
+
   if (question.value) {
     dialogButton.addEventListener('click', updateQuestion)
   }
+
+  lupin.addEventListener('mouseover', function () {
+    answer.value = ArseneLupinTickling()
+    question.value = ''
+  })
 })
 </script>
 

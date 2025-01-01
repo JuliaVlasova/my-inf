@@ -19,7 +19,9 @@ const questions = {
     'как моё имя',
     'кто я'
   ],
-  mood: ['мне']
+  mood: ['мне'],
+  want: ['хочу'],
+  doesntWant: ['не хочу']
 }
 
 export { questions }
