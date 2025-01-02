@@ -23,7 +23,7 @@ onMounted(() => {
     answer.value = ArseneLupinTickling() // Реакция на щекотку
     setTimeout(() => {
       answer.value = 'Я вас внимательно слушаю.'
-    }, 2000)
+    }, 4000)
   })
 })
 </script>
