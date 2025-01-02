@@ -19,9 +19,11 @@ onMounted(() => {
     dialogButton.addEventListener('click', updateQuestion)
   }
 
-  lupin.addEventListener('mouseover', function () {
-    answer.value = ArseneLupinTickling()
-    question.value = ''
+  lupin.addEventListener('click', function () {
+    answer.value = ArseneLupinTickling() // Реакция на щекотку
+    setTimeout(() => {
+      answer.value = 'Я вас внимательно слушаю.'
+    }, 2000)
   })
 })
 </script>

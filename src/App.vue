@@ -31,7 +31,7 @@ function changeDay(event) {
     </nav>
     <article>
       <ArseneLupinDialogWindow />
-      <ArseneLupinBody @mouseover="ArseneLupinTickling" />
+      <ArseneLupinBody @click="ArseneLupinTickling" />
 
       <div class="a-l-background">
         <AnimatedWaves />
