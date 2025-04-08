@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { ArseneLupinPhrases } from '../../assets/js/arsene-lupin-phrases'
 import { ArseneLupinTickling } from '../../assets/js/arsene-lupin-tickling'
+import { ArseneLupinSpy } from '../../assets/js/arsene-lupin-spy'
 
 const question = ref(null)
 const answer = ref('Что хорошего скажете?')
@@ -25,6 +26,8 @@ onMounted(() => {
       answer.value = 'Я вас внимательно слушаю.'
     }, 4000)
   })
+
+  ArseneLupinSpy()
 })
 </script>
 
