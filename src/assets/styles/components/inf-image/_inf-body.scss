@@ -523,6 +523,11 @@
       .a-l-inf__eyeball {
         display: none;
       }
+
+      .a-l-inf__eyelid#eyelid-upper,
+      .a-l-inf__eyelid#eyelid-lower {
+        display: none;
+      }
     }
 
     .a-l-inf__eyeball {
@@ -605,6 +610,11 @@
       animation: shadowPulse 1s ease-in-out infinite;
 
       .a-l-inf__eyeball {
+        display: none;
+      }
+
+      .a-l-inf__eyelid#eyelid-upper,
+      .a-l-inf__eyelid#eyelid-lower {
         display: none;
       }
     }
